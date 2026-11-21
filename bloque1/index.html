@@ -1,0 +1,3092 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LSAT Test Bloque 1</title>
+<meta name="description" content="Test de teoría del Bloque 1 de Líneas Subterráneas de AT y CT (ETSIDI-UPM): 174 frases V/F de exámenes y cuestionarios oficiales, explicadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+/* Layout: una columna de estudio de ~640px; cabecera fija con progreso; tarjeta de pregunta con opciones táctiles grandes. */
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --ink:#16202C; --muted:#5B6878; --line:#D9DFE7; --soft:#EAEEF3;
+  --t1:#2F5D8C; --t2:#7A4E9C; --t23:#8C5A2F; --t3:#2E7D6B; --t4:#2F5D8C; --t6:#7A4E9C; --t7:#2E7D6B; --tx:#6B7785;
+  --ok:#1E7A46; --okbg:#E5F3EA; --ko:#B23434; --kobg:#FBE9E9; --warn:#8A5A00; --warnbg:#FCF3DE;
+  --paper:#FFFFFF;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --accent:var(--t1);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F151C; --surface:#18212B; --ink:#E6ECF2; --muted:#93A1B1; --line:#2B3744; --soft:#212C38;
+  --t1:#6FA3D6; --t2:#B48BD6; --t23:#D29A63; --t3:#5FC0A8; --t4:#6FA3D6; --t6:#B48BD6; --t7:#5FC0A8; --tx:#93A1B1;
+  --ok:#5CCB8A; --okbg:#173527; --ko:#F07A7A; --kobg:#3A1D1F; --warn:#E5B85C; --warnbg:#3A2F16;
+  --paper:#F4F6F8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F151C; --surface:#18212B; --ink:#E6ECF2; --muted:#93A1B1; --line:#2B3744; --soft:#212C38;
+  --t1:#6FA3D6; --t2:#B48BD6; --t23:#D29A63; --t3:#5FC0A8; --t4:#6FA3D6; --t6:#B48BD6; --t7:#5FC0A8; --tx:#93A1B1;
+  --ok:#5CCB8A; --okbg:#173527; --ko:#F07A7A; --kobg:#3A1D1F; --warn:#E5B85C; --warnbg:#3A2F16;
+  --paper:#F4F6F8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:660px;margin:0 auto}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+.mono{font-family:var(--f-mono)}
+
+/* ---------- inicio */
+.hero{padding-block:28px 8px;display:grid;gap:6px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero h1{font-size:clamp(30px,8vw,42px);font-weight:800;letter-spacing:-.01em;line-height:1.05}
+.hero p{margin:0;color:var(--muted);max-width:56ch}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-block:18px 6px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-family:var(--f-display);font-size:24px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.sec{margin-top:22px;display:grid;gap:10px}
+.sec h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.modes{display:grid;gap:10px}
+.mode{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;text-align:left;width:100%;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer}
+.mode:hover{border-color:var(--accent)}
+.mode .ic{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:var(--soft);font-family:var(--f-mono);font-weight:600;font-size:14px}
+.mode h3{font-size:17px;font-weight:700}
+.mode p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.mode .n{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.mode.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mode.primary p,.mode.primary .n{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.mode.primary .ic{background:color-mix(in srgb,var(--bg) 16%,transparent)}
+.temas{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tema{text-align:left;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;padding:12px 14px;cursor:pointer;display:grid;gap:2px}
+.tema b{font-family:var(--f-display);font-size:16px;color:var(--c)}
+.tema span{font-size:13px;color:var(--muted)}
+.tema .bar{height:4px;background:var(--soft);border-radius:4px;margin-top:6px;overflow:hidden}
+.tema .bar i{display:block;height:100%;background:var(--ok);width:0}
+.opts{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:14px;color:var(--muted)}
+.opts label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.opts input{width:18px;height:18px;accent-color:var(--accent)}
+.linkbtn{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:14px}
+.tip{background:var(--warnbg);color:var(--ink);border-radius:10px;padding:10px 14px;font-size:14px}
+.tip b{color:var(--warn)}
+
+/* ---------- barra superior del quiz */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px 8px;display:grid;gap:8px}
+.toprow{display:flex;align-items:center;gap:10px}
+.back{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:14px}
+.title{flex:1;min-width:0;font-family:var(--f-display);font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.score{font-family:var(--f-mono);font-size:13px;display:flex;gap:10px;font-variant-numeric:tabular-nums}
+.score .g{color:var(--ok)} .score .r{color:var(--ko)}
+.prog{height:6px;background:var(--soft);border-radius:6px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+
+/* ---------- tarjeta */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-top:8px;overflow:hidden}
+.chead{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;padding:12px 16px;background:var(--soft);border-bottom:1px solid var(--line)}
+.qid{font-family:var(--f-mono);font-weight:600;font-size:14px;color:var(--accent);margin-right:auto}
+.chip{font-size:11.5px;line-height:1;padding:5px 7px;border-radius:5px;background:var(--surface);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip.hot{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:600}
+.chip.no{background:var(--kobg);color:var(--ko);border-color:transparent;font-weight:600}
+.chip.dud{background:var(--warnbg);color:var(--warn);border-color:transparent;font-weight:600}
+.cbody{padding:18px 16px 16px;display:grid;gap:14px}
+.q{font-size:18px;font-weight:600;line-height:1.4}
+.hint{font-size:13px;color:var(--muted);margin-top:-6px}
+.fig{background:var(--paper);border-radius:10px;padding:10px;overflow-x:auto;color:#16202C}
+.fig svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+.fig img{display:block;margin:0 auto;border-radius:6px;max-width:100%;height:auto}
+.choices{display:grid;gap:10px}
+.ch{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;text-align:left;width:100%;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--line);border-radius:11px;padding:12px 12px;min-height:52px;transition:border-color .15s,background .15s}
+.ch:hover:not([disabled]){border-color:var(--accent)}
+.ch .l{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--soft);font-family:var(--f-mono);font-weight:600;font-size:14px}
+.ch .t{padding-top:4px;min-width:0;overflow-wrap:anywhere}
+.ch .m{padding-top:4px;font-family:var(--f-mono);font-size:12px;font-weight:600}
+.ch.sel{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.ch.sel .l{background:var(--accent);color:var(--surface)}
+.ch.ok{border-color:var(--ok);background:var(--okbg)}
+.ch.ok .l{background:var(--ok);color:var(--surface)}
+.ch.ok .m{color:var(--ok)}
+.ch.ko{border-color:var(--ko);background:var(--kobg)}
+.ch.ko .l{background:var(--ko);color:var(--surface)}
+.ch.ko .m{color:var(--ko)}
+.ch.miss{border-color:var(--ok);border-style:dashed}
+.ch.miss .m{color:var(--ok)}
+.ch[disabled]{cursor:default}
+.ch.dim{opacity:.6}
+/* emparejar */
+.match{display:grid;gap:10px}
+.mrow{display:grid;gap:6px;padding:10px 12px;border:1.5px solid var(--line);border-radius:11px}
+.mrow .it{font-weight:600}
+.mrow select{font:inherit;font-size:15px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%}
+.mrow.ok{border-color:var(--ok);background:var(--okbg)}
+.mrow.ko{border-color:var(--ko);background:var(--kobg)}
+.mrow .sol{font-size:13.5px;color:var(--ok);font-weight:600}
+/* respuesta abierta */
+.reveal{display:grid;gap:10px}
+.ans{background:var(--okbg);border-radius:11px;padding:12px 14px}
+.ans .lbl,.exp .lbl{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ok);margin-bottom:4px}
+.exp{border-top:1px solid var(--line);padding-top:12px;font-size:15px;color:var(--ink)}
+.exp .lbl{color:var(--muted)}
+.ojo{background:var(--warnbg);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.ojo b{color:var(--warn)}
+.verdict{display:flex;align-items:center;gap:10px;font-weight:700;font-family:var(--f-display);font-size:17px}
+.verdict.ok{color:var(--ok)} .verdict.ko{color:var(--ko)}
+.exp table,.ans table{border-collapse:collapse;font-size:14px;width:100%}
+.exp td,.exp th,.ans td,.ans th{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+.tbl{overflow-x:auto}
+.actions{display:flex;flex-wrap:wrap;gap:10px;padding:0 16px 16px}
+.btn{flex:1 1 140px;border:0;border-radius:10px;padding:13px 16px;font-weight:600;cursor:pointer;background:var(--ink);color:var(--bg);font-size:16px}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn.good{background:var(--ok);color:var(--surface)}
+.btn.bad{background:var(--ko);color:var(--surface)}
+.btn[disabled]{opacity:.45;cursor:default}
+.kbd{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+/* resultados */
+.res{display:grid;gap:14px;margin-top:14px}
+.big{font-family:var(--f-display);font-size:56px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.big small{font-size:22px;color:var(--muted);font-weight:600}
+.rlist{display:grid;gap:8px}
+.ritem{display:flex;gap:10px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ko);border-radius:9px;padding:10px 12px;font-size:14.5px}
+.ritem .mono{color:var(--ko);font-size:13px;flex:none}
+mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
+mjx-container[display="true"]{margin:.4em 0!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:420px){.temas{grid-template-columns:1fr}.q{font-size:17px}}
+
+/* ---------- añadidos Parcial 2 */
+.ver{font-weight:400;color:var(--muted);font-size:14px}
+.chip.new{background:color-mix(in srgb,var(--t4) 14%,var(--surface));color:var(--t4);border-color:transparent;font-weight:600}
+.star{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:4px 8px;cursor:pointer;color:var(--muted);font-size:14px;line-height:1}
+.star.on{color:#C99A12;border-color:#C99A12;background:color-mix(in srgb,#C99A12 12%,var(--surface))}
+.mode.new{border-left:4px solid var(--t4)}
+.mode[disabled]{opacity:.55;cursor:default}
+.tema .g{font-size:11.5px;font-family:var(--f-mono);color:var(--muted)}
+.ref{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.verdict.mut{color:var(--muted)}
+.fig .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fig .cap{font-size:12.5px;text-align:center;color:#5B6878;font-weight:600;margin-bottom:2px}
+@media (max-width:560px){.fig .two{grid-template-columns:1fr}}
+.tbs{display:grid;gap:8px}
+.tb{display:grid;grid-template-columns:96px 1fr 48px;gap:10px;align-items:center;font-size:14px}
+.tb b{font-family:var(--f-display)}
+.tb .bar{height:8px;background:var(--soft);border-radius:6px;overflow:hidden}.tb .bar i{display:block;height:100%;background:var(--ok)}
+.tb .mono{text-align:right;color:var(--muted);font-size:13px}
+.ritem.ok{border-left-color:var(--ok)} .ritem.ok .mono{color:var(--ok)}
+.ritem.bl{border-left-color:var(--line)} .ritem.bl .mono{color:var(--muted)}
+.ritem .mono{min-width:64px}
+table.mini{border-collapse:collapse;width:100%;font-size:14px;margin:4px 0}
+table.mini td,table.mini th{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left}
+.ans .tbl,.exp .tbl{overflow-x:auto}
+
+:root{--c1:#2F5D8C;--c2:#7A4E9C;--c3:#8C5A2F;--c41:#2E7D6B;--c42:#5E6B2F;--c5:#B0473A;--c6:#2F6E8C;--c7:#6B3F7A;--accent:var(--c1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--c1:#6FA3D6;--c2:#B48BD6;--c3:#D29A63;--c41:#5FC0A8;--c42:#B5C16A;--c5:#EE8A7C;--c6:#6CB6D8;--c7:#C49AD6}}
+:root[data-theme="dark"]{--c1:#6FA3D6;--c2:#B48BD6;--c3:#D29A63;--c41:#5FC0A8;--c42:#B5C16A;--c5:#EE8A7C;--c6:#6CB6D8;--c7:#C49AD6}
+.vf{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.vf .ch{justify-content:center;align-items:center}.vf .ch .m{display:none}.vf .ch .t{flex:none;font-weight:600}
+.tag{font-size:12px;font-weight:600;letter-spacing:.02em;margin-bottom:6px;text-transform:uppercase}
+.chip.off{border-style:dashed}
+mark{background:color-mix(in srgb,var(--warn) 22%,transparent);color:inherit;border-radius:3px;padding:0 2px;font-weight:600}
+.twin{margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--soft)}
+.twin .lbl{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.trow{display:flex;gap:10px;align-items:flex-start;padding:4px 0;font-size:15px}
+.tvf{flex:none;width:24px;height:24px;border-radius:6px;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff;margin-top:1px}
+.tvf.v{background:var(--ok)}.tvf.f{background:var(--ko)}
+.lead{color:var(--muted);margin:14px 0 6px}
+.idea{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:12px 14px;margin:12px 0}
+.ihead{display:flex;align-items:center;gap:8px;font-family:var(--f-display);font-size:17px;margin-bottom:4px}
+.ihead b{color:var(--c)}.ihead .btn{margin-left:auto}
+.btn.sm{padding:6px 10px;font-size:13px;min-height:0}
+.idea ul{margin:0;padding-left:18px}.idea li{margin:6px 0;line-height:1.45}
+</style>
+</head>
+<body>
+
+<div class="wrap" id="app"></div>
+
+<script>
+window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},startup:{typeset:false}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"></script>
+<script>
+const TEMAS={"T1": {"n": "T1", "t": "Redes de AT", "v": "--c1"}, "T2": {"n": "T2", "t": "Cables: constitución y tipos", "v": "--c2"}, "T3": {"n": "T3", "t": "Empalmes y terminaciones", "v": "--c3"}, "T4.1": {"n": "T4.1", "t": "Puesta a tierra de pantallas", "v": "--c41"}, "T4.2": {"n": "T4.2", "t": "ITC-LAT 06", "v": "--c42"}, "T5": {"n": "T5", "t": "Parámetros eléctricos", "v": "--c5"}, "T6": {"n": "T6", "t": "Intensidad admisible", "v": "--c6"}, "T7": {"n": "T7", "t": "Sobrecarga y cortocircuito", "v": "--c7"}};
+const IDEAS={"T1": ["<b>Estados de la red.</b> Normal: todo en márgenes. <b>Alerta</b>: $U$ <i>y</i> $f$ dentro, pero la carga o la potencia no garantizada no cumplen la fiabilidad. <b>Emergencia</b>: $U$ <i>o</i> $f$ fuera.", "<b>Huso.</b> Subestación → líneas → <b>centro de reflexión</b> ← <b>línea 0</b>. La línea 0 está <b>en tensión y sin carga</b>. El centro de reflexión <b>solo alimenta si hay un fallo</b>. Socorro del 100&nbsp;%.", "<b>Huso apoyado</b> = dos husos que comparten el centro de reflexión → <b>2 líneas 0</b> desde 2 subestaciones.", "<b>Espiga</b> = un huso dentro de otro → <b>2 centros de reflexión</b> y <b>2 líneas 0</b> (también en tensión).", "<b>Anillo (pétalo).</b> Sale y vuelve a la misma subestación o centro de reparto. Se explota <b>abierto</b> (radial) y socorre el 50&nbsp;%. <b>Anillo apoyado</b>: vuelve a otra. Nada de centro de reflexión.", "<b>Centro de reparto</b>: fuertemente alimentado, <b>con protecciones</b> y aparatos de maniobra.", "<b>Subterránea frente a aérea</b>: más pérdidas, menos riesgo de incendio. En CA, a larga distancia (islas, eólica marina, Madrid-Barcelona) no sirve por la longitud crítica → <b>HVDC</b>.", "$U_s$ = tensión máxima en condiciones <b>normales</b> → dimensiona el <b>aislamiento</b>. El autoseccionador abre tras <b>2</b> disparos. Racimo: 8 CT, 800&nbsp;kVA, 4&nbsp;km.", "Las líneas <b>sí</b> se pueden sobrecargar (de forma controlada y temporal). Las redes urbanas cumplen el criterio $n-1$."], "T2": ["<b>Orden de capas</b>: conductor | semic. interna | aislamiento | <b>semic. externa</b> | pantalla | (armadura) | cubierta. <b>Nunca</b> hay semiconductora entre pantalla y cubierta.", "<b>Semiconductoras</b>: homogeneizan el campo y evitan descargas parciales en la interfaz con el aislamiento. Los huecos entre los alambres y la semic. interna no importan: allí no hay campo.", "<b>Pantalla</b>: confina el campo (en la cubierta $E=0$, en AT y en MT) y deriva las corrientes capacitivas y de defecto. La armadura <b>no</b> sustituye a la pantalla.", "<b>Armadura</b>: unipolar → <b>no magnética</b>; tripolar → puede ser magnética. En toda armadura conductora (también de Al) <b>se inducen corrientes</b>.", "<b>Aislamientos</b>: XLPE 90/250&nbsp;ºC (termoestable) · <b>HEPR 105&nbsp;ºC, solo MT</b> · EPR hasta 220&nbsp;kV · PE hasta 400&nbsp;kV · PPLP 760&nbsp;kV · PVC no en AT por su $\\tan\\delta$ (su rigidez, 200-400&nbsp;kV/cm, no es peor que la del XLPE, 300).", "<b>Cubiertas</b>. Mecánica: <b>PE > TPO > PVC > TPR</b>. Humos: PVC > PE > TPO > TPR. Los humos del PVC son tóxicos.", "<b>Fuego</b>: (S) no propagador de la <i>llama</i> · (AS) no propagador del <i>incendio</i> · (AS+) resistente al fuego. <b>“S+” no existe.</b>", "<b>Designación</b>: R = XLPE · D = EPR · HEPR · Z1 = poliolefina · V = PVC · 2OL = obturación en conductor y pantalla · K = compacto · <b>H16 = pantalla de 16&nbsp;mm² de Cu</b>.", "<b>Milliken</b> (segmentado) por encima de 1000&nbsp;mm², para reducir el <b>efecto pelicular</b>. <b>Obturación radial</b> = vaina estanca que puede hacer de pantalla."], "T3": ["<b>Cono deflector</b>: al final de la semiconductora <b>externa</b>, en terminaciones y en empalmes. Sobre el manguito va el <i>electrodo de unión</i>, no el deflector.", "<b>Empalme normal</b> (pantalla continua): solid bonding y dentro de un tramo single-point. <b>Empalme seccionado</b>: cross-bonding.", "Pantallas a limitadores con <b>cable concéntrico</b>, que tiene menor inductancia.", "<b>Terminaciones</b>: GIS secas o con fluido (ni prohibido ni obligatorio). Línea de fuga = mm/kV × $U_s$, también en las de interior.", "<b>Montaje</b>: termorretráctil = diámetro mayor que se contrae con calor · contráctil en frío = se libera un soporte · enfilable = se empuja sobre el cable.", "<b>Enchufables</b>: hasta 36&nbsp;kV, apantalladas, con divisor capacitivo, pueden ser atornillables."], "T4.1": ["<b>Solid bonding</b> (ambos extremos a tierra): circula corriente por las pantallas → pérdidas $\\lambda_1'$. <b>La R aparente sube y la X baja.</b>", "<b>Single-point</b>: un solo extremo a tierra → <b>sin corriente de circulación</b> ($\\lambda_1'=0$, solo Foucault), pero <b>sí corriente capacitiva</b>. Tensión inducida en el extremo libre → <b>descargador pantalla-tierra</b>.", "<b>Cable equipotencial</b> (en SP): a tierra en <b>ambos extremos</b>; por él vuelve la corriente de falta.", "<b>Cross-bonding</b>: tramos casi iguales (500-600&nbsp;m), empalmes seccionados, limitadores en cada cruce. Con una falta fase-tierra <b>sí</b> hay corrientes y sobretensiones en las pantallas.", "<b>Limitadores: siempre entre pantalla y tierra</b>, nunca entre conductor y pantalla."], "T4.2": ["<b>Bajo tubo</b>: no hace falta placa de protección, pero <b>sí cinta de señalización</b>. La profundidad es la misma.", "<b>Gas</b>: debajo de depósitos, <b>permitido</b> con condiciones (1,2&nbsp;m, tubos que sobresalen 2&nbsp;m). En una galería con gas, <b>prohibido</b>.", "<b>AT por debajo de BT</b> (a 0,25&nbsp;m). En galería, separar por tensiones (no hay regla de “comunicaciones encima”).", "<b>Pararrayos</b> en el paso aéreo-subterráneo: “<i>cuando deban</i> instalarse” → no siempre."], "T5": ["<b>Inductancia</b>: trébol < capa (mayor DMG en capa).", "<b>Pelicular</b>: segmentado < hueco < compacto. Crece con la sección o el diámetro (menos $R$, más $x_s$).", "<b>Proximidad</b>: crece con la sección y con $d_c/s$. Capa < trébol con la misma S (tabla de la T5, p.&nbsp;16).", "<b>Dieléctricas</b>: $W_d=\\omega C U_0^2\\tan\\delta$ → ∝ $U^2$; PVC ≫ XLPE; la $\\tan\\delta$ <b>sube</b> al envejecer. Las pérdidas en pantallas no dependen del aislamiento.", "<b>Campo</b>: $E(x)=\\dfrac{U_0}{x\\ln(R/r)}$ → máximo junto al <b>conductor</b>. En campo radial, capacidad entre fases = 0.", "<b>Pantalla en SB</b>: $\\lambda_1'=\\dfrac{R_s}{R}\\dfrac{1}{1+(R_s/X)^2}$ → 0 si $R_s\\to0$.", "<b>Longitud crítica</b>: $L_c=\\dfrac{\\sqrt3\\,I_z}{\\omega C U}$, inversamente proporcional a $C$ y a $U$ por igual; frente a la sección, manda la tensión."], "T6": ["<b>Iz baja</b> si: va bajo tubo (aire del tubo), está más profundo, la $\\rho_T$ es mayor (térmica, no eléctrica) o la cubierta es de PVC (más $T_3$ y límite de 70&nbsp;ºC)."], "T7": ["<b>Sobrecarga</b>: sí se puede, de forma temporal. Más sección → más tiempo ($\\tau$ mayor). En emergencia, el XLPE llega hasta 105-130&nbsp;ºC.", "<b>Cortocircuito adiabático</b>: $I_{cc}\\sqrt t=K\\,S$ → $I_{cc}\\propto 1/\\sqrt t$ (no ∝ $t$)."]};
+const Q=[
+{
+"id": "T1·01",
+"tema": "T1",
+"q": "Las pérdidas de potencia en las redes eléctricas de corriente alterna son mayores en las líneas subterráneas que en las aéreas.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 12",
+"Final jul-25 n.º 12",
+"Modelo nov-25 n.º 32",
+"Final ene-26 n.º 12",
+"Autoev. T1 n.º 23"
+],
+"veces": 5,
+"ex": 4,
+"e": "El cable tiene pérdidas que la línea aérea no tiene: dieléctricas ($W_d=\\omega C U_0^2\\tan\\delta$) y en pantallas ($\\lambda_1 W_c$). La solución oficial del cuestionario de T1 lo da como cierto.",
+"r": "T1_Presentación p. 40 (“Pérdidas de energía: aérea menor”); T1_Texto p. 42, n.º 23"
+},
+{
+"id": "T1·02",
+"tema": "T1",
+"q": "Un centro de reparto, a diferencia de una subestación, no dispone de protecciones.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 19",
+"Modelo nov-25 n.º 39",
+"Final ene-26 n.º 19"
+],
+"veces": 3,
+"ex": 3,
+"e": "Un centro de reparto es “un centro fuertemente alimentado con protecciones y aparatos de maniobra” del que se derivan líneas de MT de la misma tensión.",
+"r": "Solución oficial T1_Texto p. 42, n.º 18; T1_Presentación p. 17",
+"tw": "T1·22",
+"qm": "Un centro de reparto, <mark>a diferencia</mark> de una <mark>subestación, no dispone</mark> de <mark>protecciones.</mark>",
+"twm": "Un centro de reparto <mark>es un centro fuertemente alimentado con protecciones y aparatos</mark> de <mark>maniobra, en el que</mark> una <mark>o más líneas</mark> de <mark>MT se derivan de otras de la misma tensión.</mark>"
+},
+{
+"id": "T1·03",
+"tema": "T1",
+"q": "Si la tensión está dentro de márgenes de funcionamiento, pero la frecuencia está fuera de márgenes, se considera que el estado es de “alerta”.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 22",
+"Autoev. T1 n.º 7"
+],
+"veces": 2,
+"ex": 1,
+"e": "<b>Alerta</b>: tensión <i>y</i> frecuencia dentro de márgenes, pero la carga o la potencia no garantizada no cumplen la fiabilidad. <b>Emergencia</b>: tensión <i>o</i> frecuencia fuera de rango. Con la frecuencia fuera es emergencia.",
+"r": "T1_Presentación p. 15; T1_Texto p. 12-13; solución oficial T1_Texto p. 42, n.º 7"
+},
+{
+"id": "T1·04",
+"tema": "T1",
+"q": "Si la frecuencia está dentro de márgenes de funcionamiento, pero la tensión está fuera de márgenes, se considera que el estado es de “alerta” pero no de “emergencia”.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 2",
+"Final jul-25 n.º 22"
+],
+"veces": 2,
+"ex": 2,
+"e": "Basta con que la tensión <i>o</i> la frecuencia estén fuera de rango para que el estado sea de <b>emergencia</b>.",
+"r": "T1_Presentación p. 15; T1_Texto p. 13"
+},
+{
+"id": "T1·05",
+"tema": "T1",
+"q": "Desde un centro de reflexión puede alimentarse una red en anillo (pétalo).",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 18",
+"Final jul-25 n.º 18"
+],
+"veces": 2,
+"ex": 2,
+"e": "El anillo (pétalo) sale de una subestación o centro de reparto y vuelve a ella (o a otra, en el anillo apoyado). El centro de reflexión es propio de las redes en huso y en espiga.",
+"r": "T1_Texto p. 20-22; T1_Presentación p. 22-26",
+"tw": "T1·12",
+"qm": "Desde un centro de reflexión puede alimentarse una red en <mark>anillo (pétalo).</mark>",
+"twm": "Desde un centro de reflexión puede alimentarse <mark>parte de</mark> una red en <mark>huso en caso de un fallo de un tramo de cable.</mark>"
+},
+{
+"id": "T1·06",
+"tema": "T1",
+"q": "La línea 0 de una red en huso debe estar en tensión permanentemente (sin carga, pero bajo la tensión de la red).",
+"a": "V",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 40",
+"Autoev. T1 n.º 4"
+],
+"veces": 2,
+"ex": 1,
+"e": "Se mantiene en tensión y sin carga para asegurar que su aislamiento está en buen estado cuando haga falta.",
+"r": "T1_Texto p. 22; solución oficial T1_Texto p. 42, n.º 4"
+},
+{
+"id": "T1·07",
+"tema": "T1",
+"q": "La arquitectura de red en huso apoyado requiere dos líneas 0 (alimentadas desde dos subestaciones diferentes).",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 19",
+"Autoev. T1 n.º 8"
+],
+"veces": 2,
+"ex": 1,
+"e": "Dos husos comparten el centro de reflexión; cada uno tiene su línea 0, alimentada desde una subestación distinta.",
+"r": "T1_Texto p. 23; solución oficial T1_Texto p. 42, n.º 8"
+},
+{
+"id": "T1·08",
+"tema": "T1",
+"q": "Una red en espiga precisa de al menos dos centros de reflexión.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 23",
+"Final jul-25 n.º 23"
+],
+"veces": 2,
+"ex": 2,
+"e": "Es un huso dentro de otro: tiene dos centros de reflexión unidos por una línea 0.",
+"r": "T1_Texto p. 23; T1_Presentación p. 27"
+},
+{
+"id": "T1·09",
+"tema": "T1",
+"q": "Se podría utilizar un cable aislado de corriente continua de alta tensión (p. ej. 220 kV) para transportar energía eléctrica de Madrid a Barcelona.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 16",
+"Modelo nov-25 n.º 36"
+],
+"veces": 2,
+"ex": 2,
+"e": "En CC no hay corriente capacitiva en régimen permanente, así que no existe longitud crítica: el HVDC no tiene limitación de distancia.",
+"r": "T5_Texto p. 36; solución oficial T1_Texto p. 42, n.º 2",
+"tw": "T1·10",
+"qm": "<mark>Se podría</mark> utilizar un cable aislado de corriente <mark>continua</mark> de alta tensión <mark>(p. ej.</mark> 220 kV) para transportar energía eléctrica de Madrid a Barcelona.",
+"twm": "<mark>Es viable</mark> utilizar un cable aislado de corriente <mark>alterna</mark> de alta tensión <mark>de</mark> 220 kV para transportar energía eléctrica de Madrid a Barcelona."
+},
+{
+"id": "T1·10",
+"tema": "T1",
+"q": "Es viable utilizar un cable aislado de corriente alterna de alta tensión de 220 kV para transportar energía eléctrica de Madrid a Barcelona.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 16",
+"Final ene-26 n.º 16"
+],
+"veces": 2,
+"ex": 2,
+"e": "La corriente capacitiva del cable consume su capacidad: a 220-400 kV la longitud crítica $L_c=\\dfrac{\\sqrt3\\,I_z}{\\omega C U}$ es de unas decenas de km, muy por debajo de los $\\approx 500$ km.",
+"r": "T5_Presentación p. 57-59; solución oficial T1_Texto p. 42, n.º 1",
+"tw": "T1·09",
+"qm": "<mark>Es viable</mark> utilizar un cable aislado de corriente <mark>alterna</mark> de alta tensión <mark>de</mark> 220 kV para transportar energía eléctrica de Madrid a Barcelona.",
+"twm": "<mark>Se podría</mark> utilizar un cable aislado de corriente <mark>continua</mark> de alta tensión <mark>(p. ej.</mark> 220 kV) para transportar energía eléctrica de Madrid a Barcelona."
+},
+{
+"id": "T1·11",
+"tema": "T1",
+"q": "Si en una red la frecuencia se sale fuera del margen admisible, la red se encuentra en estado de emergencia.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 13"
+],
+"veces": 1,
+"ex": 1,
+"e": "Emergencia = tensión o frecuencia fuera de rango, asociada a una incidencia en un elemento fundamental de la red.",
+"r": "T1_Presentación p. 15; T1_Texto p. 13"
+},
+{
+"id": "T1·12",
+"tema": "T1",
+"q": "Desde un centro de reflexión puede alimentarse parte de una red en huso en caso de un fallo de un tramo de cable.",
+"a": "V",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 38"
+],
+"veces": 1,
+"ex": 1,
+"e": "El centro de reflexión, alimentado por la línea 0, solo entra en juego con un fallo: se aísla el tramo averiado y los CT de la línea afectada se alimentan desde el centro de reflexión.",
+"r": "T1_Texto p. 22 (fig. 15); T1_Presentación p. 25-26",
+"tw": "T1·05",
+"qm": "Desde un centro de reflexión puede alimentarse <mark>parte de</mark> una red en <mark>huso en caso de un fallo de un tramo de cable.</mark>",
+"twm": "Desde un centro de reflexión puede alimentarse una red en <mark>anillo (pétalo).</mark>"
+},
+{
+"id": "T1·13",
+"tema": "T1",
+"q": "En condiciones normales de explotación de una red en huso, sin fallo alguno, parte de los centros de transformación se alimentan desde el centro de reflexión y la otra parte desde la subestación.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-26 n.º 18"
+],
+"veces": 1,
+"ex": 1,
+"e": "“El centro de reflexión en condiciones normales de explotación no alimenta a ninguna línea”. Todos los CT se alimentan desde la subestación.",
+"r": "T1_Texto p. 22"
+},
+{
+"id": "T1·14",
+"tema": "T1",
+"q": "La línea 0 de una red en espiga debe estar normalmente en tensión.",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-26 n.º 20"
+],
+"veces": 1,
+"ex": 1,
+"e": "La espiga es un huso dentro de otro (“la red en espiga incluye una red en huso”, oficial V). Sus líneas 0 se explotan igual: en tensión y sin carga.",
+"r": "T1_Texto p. 22-24; solución oficial T1_Texto p. 42, n.º 22",
+"tw": "T1·15",
+"qm": "<mark>La línea 0 de</mark> una red en espiga <mark>debe estar normalmente en tensión.</mark>",
+"twm": "Una red en espiga <mark>no utiliza línea cero.</mark>"
+},
+{
+"id": "T1·15",
+"tema": "T1",
+"q": "Una red en espiga no utiliza línea cero.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 3"
+],
+"veces": 1,
+"ex": 1,
+"e": "Tiene incluso dos: una de la subestación al primer centro de reflexión y otra entre los dos centros de reflexión.",
+"r": "T1_Texto p. 23; T1_Presentación p. 27",
+"tw": "T1·14",
+"qm": "Una red en espiga <mark>no utiliza línea cero.</mark>",
+"twm": "<mark>La línea 0 de</mark> una red en espiga <mark>debe estar normalmente en tensión.</mark>"
+},
+{
+"id": "T1·16",
+"tema": "T1",
+"q": "La arquitectura de red en huso no requiere una línea 0.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 20"
+],
+"veces": 1,
+"ex": 1,
+"e": "El huso se define precisamente por la línea 0 que une la subestación con el centro de reflexión.",
+"r": "T1_Texto p. 22",
+"tw": "T1·17",
+"qm": "La arquitectura de red en <mark>huso no</mark> requiere <mark>una línea</mark> 0.",
+"twm": "La arquitectura de red en <mark>espiga simple</mark> requiere <mark>dos líneas</mark> 0."
+},
+{
+"id": "T1·17",
+"tema": "T1",
+"q": "La arquitectura de red en espiga simple requiere dos líneas 0.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 20"
+],
+"veces": 1,
+"ex": 1,
+"e": "“Además de la línea 0 que alimenta el primer centro de reflexión desde la subestación hay otra línea 0 entre ambos centros de reflexión”.",
+"r": "T1_Texto p. 23",
+"tw": "T1·16",
+"qm": "La arquitectura de red en <mark>espiga simple</mark> requiere <mark>dos líneas</mark> 0.",
+"twm": "La arquitectura de red en <mark>huso no</mark> requiere <mark>una línea</mark> 0."
+},
+{
+"id": "T1·18",
+"tema": "T1",
+"q": "La tensión más elevada de la red es un parámetro anormal de funcionamiento de la red que debe ser considerado para la actuación de las protecciones.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 6"
+],
+"veces": 1,
+"ex": 1,
+"e": "$U_s$ es la tensión máxima en <i>condiciones normales</i> (sin sobretensiones temporales ni transitorias). Es el parámetro que condiciona el <i>aislamiento</i> del material, no las protecciones.",
+"r": "T1_Texto p. 10-11"
+},
+{
+"id": "T1·19",
+"tema": "T1",
+"q": "El autoseccionador situado al comienzo de una línea en derivación la abre de forma automática, si por ella ha circulado la corriente de falta, en la tercera maniobra consecutiva de apertura del interruptor de cabecera.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 17"
+],
+"veces": 1,
+"ex": 1,
+"e": "Abre tras <b>dos</b> disparos consecutivos del interruptor de cabecera, en el intervalo sin tensión antes del tercer reenganche.",
+"r": "T1_Texto p. 18"
+},
+{
+"id": "T1·20",
+"tema": "T1",
+"q": "Las líneas subterráneas pueden funcionar, en determinadas condiciones ambientales, por encima del 100 % de su carga nominal sin sobrecargarse térmicamente.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 22"
+],
+"veces": 1,
+"ex": 1,
+"e": "Con condiciones favorables (terreno más frío que el de diseño) se puede superar el 100 % de la carga nominal sin pasar de la temperatura máxima.",
+"r": "T1_Texto p. 11-12"
+},
+{
+"id": "T1·21",
+"tema": "T1",
+"q": "Durante ciertos periodos de tiempo una línea subterránea puede sobrecargarse térmicamente.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 23"
+],
+"veces": 1,
+"ex": 1,
+"e": "Las redes pueden sobrecargarse en periodos limitados y controlados (p. ej. 115 % durante 20 min en líneas de MT). El oficial da como falso “las líneas eléctricas no pueden sobrecargarse”.",
+"r": "T1_Texto p. 36; solución oficial T1_Texto p. 42, n.º 16",
+"tw": "T1·25",
+"qm": "<mark>Durante ciertos periodos de tiempo una línea subterránea puede</mark> sobrecargarse <mark>térmicamente.</mark>",
+"twm": "<mark>Las líneas eléctricas no pueden</mark> sobrecargarse."
+},
+{
+"id": "T1·22",
+"tema": "T1",
+"q": "Un centro de reparto es un centro fuertemente alimentado con protecciones y aparatos de maniobra, en el que una o más líneas de MT se derivan de otras de la misma tensión.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 18"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es la definición del texto.",
+"r": "Solución oficial T1_Texto p. 42, n.º 18",
+"tw": "T1·02",
+"qm": "Un centro de reparto <mark>es un centro fuertemente alimentado con</mark> protecciones <mark>y aparatos de maniobra, en el que una o más líneas de MT se derivan de otras de la misma tensión.</mark>",
+"twm": "Un centro de reparto, <mark>a diferencia de una subestación, no dispone de</mark> protecciones."
+},
+{
+"id": "T1·23",
+"tema": "T1",
+"q": "Los cables aislados de alta tensión en corriente alterna de 220 kV se utilizan para conectar pequeñas islas alejadas ($>100$ km) a la red eléctrica de un continente.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 1"
+],
+"veces": 1,
+"ex": 0,
+"e": "Por la longitud crítica no es viable en CA a esa distancia; se usa HVDC.",
+"r": "Solución oficial T1_Texto p. 42, n.º 1; T5_Texto p. 36"
+},
+{
+"id": "T1·24",
+"tema": "T1",
+"q": "Las instalaciones eólicas dispuestas en el mar a distancias $>50$ km se conectan a la red eléctrica a través de cables de alta tensión de corriente continua.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 2"
+],
+"veces": 1,
+"ex": 0,
+"e": "Misma razón: la corriente capacitiva limita la CA; en CC no hay longitud crítica.",
+"r": "Solución oficial T1_Texto p. 42, n.º 2"
+},
+{
+"id": "T1·25",
+"tema": "T1",
+"q": "Las líneas eléctricas no pueden sobrecargarse.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 16"
+],
+"veces": 1,
+"ex": 0,
+"e": "Pueden sobrecargarse en periodos limitados y controlados.",
+"r": "T1_Texto p. 36; solución oficial T1_Texto p. 42, n.º 16",
+"tw": "T1·21",
+"qm": "<mark>Las líneas eléctricas no pueden</mark> sobrecargarse.",
+"twm": "<mark>Durante ciertos periodos de tiempo una línea subterránea puede</mark> sobrecargarse <mark>térmicamente.</mark>"
+},
+{
+"id": "T1·26",
+"tema": "T1",
+"q": "El gestor de la red de distribución no debe permitir que existan sobrecargas en las líneas ni en los transformadores.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 6"
+],
+"veces": 1,
+"ex": 0,
+"e": "Se admiten sobrecargas controladas en amplitud y duración.",
+"r": "T1_Texto p. 36-37; solución oficial T1_Texto p. 42, n.º 6"
+},
+{
+"id": "T1·27",
+"tema": "T1",
+"q": "Las redes aisladas en anillo se explotan con el anillo cerrado.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 3"
+],
+"veces": 1,
+"ex": 0,
+"e": "Aunque el anillo interconecta todos los CT, se explota de forma <b>radial</b>: se abre en un CT y solo se cierra para reponer el servicio tras un fallo.",
+"r": "T1_Texto p. 20-21; solución oficial T1_Texto p. 42, n.º 3"
+},
+{
+"id": "T1·28",
+"tema": "T1",
+"q": "La red en anillo (pétalo) debe conectar todos los CT de forma cerrada y continuada hasta la subestación de entrada o a otra subestación o centro de reparto.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 20"
+],
+"veces": 1,
+"ex": 0,
+"e": "El anillo no se explota cerrado (se explota radial) y volver a otra subestación o centro de reparto es el <i>anillo apoyado</i>.",
+"r": "T1_Texto p. 20-21; solución oficial T1_Texto p. 42, n.º 20"
+},
+{
+"id": "T1·29",
+"tema": "T1",
+"q": "La red de distribución de media tensión puede incluir las líneas de hasta 30 kV, sean aéreas o subterráneas.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 5"
+],
+"veces": 1,
+"ex": 0,
+"e": "La MT de distribución va de 10 a 30 kV, en aéreo o en subterráneo.",
+"r": "T1_Texto p. 4; solución oficial T1_Texto p. 42, n.º 5"
+},
+{
+"id": "T1·30",
+"tema": "T1",
+"q": "El número máximo de CT que el reglamento permite proteger con un mismo dispositivo es 8, con una potencia total del racimo no superior a 800 kVA y una longitud máxima de 4 km hasta el transformador más alejado.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 9"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es literal del texto (racimo de transformadores).",
+"r": "T1_Texto p. 18; solución oficial T1_Texto p. 42, n.º 9"
+},
+{
+"id": "T1·31",
+"tema": "T1",
+"q": "Las redes radiales tienen peor calidad de servicio que las redes en anillo.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 10"
+],
+"veces": 1,
+"ex": 0,
+"e": "El anillo permite reconfigurar y reponer el suministro desde el otro extremo tras un fallo.",
+"r": "T1_Texto p. 19-20; solución oficial T1_Texto p. 42, n.º 10"
+},
+{
+"id": "T1·32",
+"tema": "T1",
+"q": "La máxima capacidad de socorrer a los CT en una red en huso es el 100 %, aunque falle un cable aislado de la red.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 11"
+],
+"veces": 1,
+"ex": 0,
+"e": "La línea 0 tiene al menos la misma capacidad que cada línea: no hay reducción de potencia en contingencia (en el anillo, solo el 50 %).",
+"r": "T1_Texto p. 20-22; solución oficial T1_Texto p. 42, n.º 11"
+},
+{
+"id": "T1·33",
+"tema": "T1",
+"q": "El riesgo de provocar un incendio de las redes eléctricas subterráneas es mayor que el de las redes aéreas.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 12"
+],
+"veces": 1,
+"ex": 0,
+"e": "Al revés: “un fuerte inconveniente de las líneas aéreas es su mayor probabilidad de producir incendios”.",
+"r": "T1_Texto p. 16; solución oficial T1_Texto p. 42, n.º 12"
+},
+{
+"id": "T1·34",
+"tema": "T1",
+"q": "Las redes de corriente continua producen menores pérdidas que las redes de corriente alterna.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 13"
+],
+"veces": 1,
+"ex": 0,
+"e": "En CC no hay corriente capacitiva, ni efecto pelicular ni de proximidad, ni pérdidas dieléctricas o en pantallas por inducción.",
+"r": "Solución oficial T1_Texto p. 42, n.º 13"
+},
+{
+"id": "T1·35",
+"tema": "T1",
+"q": "Los flujos de potencia en las redes de corriente continua pueden controlarse mejor que en las redes de CA.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 14"
+],
+"veces": 1,
+"ex": 0,
+"e": "Los convertidores fijan directamente la potencia transmitida.",
+"r": "T1_Texto p. 27; solución oficial T1_Texto p. 42, n.º 14"
+},
+{
+"id": "T1·36",
+"tema": "T1",
+"q": "La corriente de cortocircuito de las redes de CC es más fácil de cortar por interruptores automáticos de CC que de CA.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 15"
+],
+"veces": 1,
+"ex": 0,
+"e": "La CC no pasa por cero, así que el arco es mucho más difícil de extinguir.",
+"r": "Solución oficial T1_Texto p. 42, n.º 15"
+},
+{
+"id": "T1·37",
+"tema": "T1",
+"q": "Las redes de distribución se diseñan para que, ante un fallo en una línea, un transformador o un generador, se garantice el suministro en el resto de la red sin sobrecargas ni tensiones fuera de límites.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 17"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es el criterio de fiabilidad $n-1$.",
+"r": "T1_Texto p. 37; solución oficial T1_Texto p. 42, n.º 17"
+},
+{
+"id": "T1·38",
+"tema": "T1",
+"q": "Las redes de distribución urbanas cumplirán el criterio de fiabilidad N-1.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 19"
+],
+"veces": 1,
+"ex": 0,
+"e": "Con un fallo, la potencia no garantizada es como máximo la de un CT.",
+"r": "T1_Texto p. 19; T1_Presentación p. 17; solución oficial T1_Texto p. 42, n.º 19"
+},
+{
+"id": "T1·39",
+"tema": "T1",
+"q": "La red en huso apoyado consiste en compartir el centro de reflexión entre dos redes en huso.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 21"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es la definición, con dos líneas 0 desde dos subestaciones.",
+"r": "T1_Texto p. 23; solución oficial T1_Texto p. 42, n.º 21"
+},
+{
+"id": "T1·40",
+"tema": "T1",
+"q": "La red en espiga incluye una red en huso.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 22"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es “un huso dentro de otro”.",
+"r": "T1_Texto p. 23; solución oficial T1_Texto p. 42, n.º 22"
+},
+{
+"id": "T1·41",
+"tema": "T1",
+"q": "La inyección de potencia reactiva en la red modifica el reparto de potencia activa a través de las líneas de la red.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 24"
+],
+"veces": 1,
+"ex": 0,
+"e": "En redes malladas, actuar sobre tensiones y reactiva (p. ej. con FACTS) cambia el reparto de flujos.",
+"r": "T1_Texto p. 30; solución oficial T1_Texto p. 42, n.º 24"
+},
+{
+"id": "T1·42",
+"tema": "T1",
+"q": "Los sistemas de transmisión flexibles (FACTS) son dispositivos de electrónica de potencia utilizados para resolver problemas de inestabilidad estática y dinámica en las redes de CA.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T1 n.º 25"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es la definición del texto.",
+"r": "T1_Texto p. 30; solución oficial T1_Texto p. 42, n.º 25"
+},
+{
+"id": "T2·01",
+"tema": "T2",
+"q": "Las armaduras de los cables unipolares deben ser de material ferromagnético.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 30",
+"Final jul-25 n.º 30",
+"Final ene-26 n.º 30",
+"Autoev. T2 n.º 8"
+],
+"veces": 4,
+"ex": 3,
+"e": "En un unipolar el flujo de su propia corriente no se compensa: una armadura magnética se calentaría (histéresis y corrientes inducidas). “En cables unipolares las armaduras deben ser de material <b>no magnético</b>”.",
+"r": "T2_Presentación p. 24; solución oficial T2_Texto p. 29, n.º 8",
+"n": "El alumno de ene-2026 la marcó V: está mal.",
+"tw": "T2·16",
+"qm": "Las armaduras de los cables <mark>unipolares deben</mark> ser de material ferromagnético.",
+"twm": "Las armaduras de los cables <mark>tripolares pueden</mark> ser de material ferromagnético."
+},
+{
+"id": "T2·02",
+"tema": "T2",
+"q": "Un cable aislado precisa una capa semiconductora externa situada entre la pantalla del cable y la cubierta.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 2",
+"Final jul-25 n.º 2",
+"Modelo nov-25 n.º 22"
+],
+"veces": 3,
+"ex": 3,
+"e": "La semiconductora interna va entre conductor y aislamiento; la <b>externa</b>, entre <b>aislamiento y pantalla</b>. Entre pantalla y cubierta no hay semiconductora.",
+"r": "T2_Presentación p. 18-19",
+"tw": "T2·08",
+"qm": "Un cable aislado precisa una capa semiconductora externa situada entre la pantalla del cable <mark>y la cubierta.</mark>",
+"twm": "Un cable aislado precisa una capa semiconductora externa situada entre <mark>el aislamiento principal y</mark> la pantalla del cable."
+},
+{
+"id": "T2·03",
+"tema": "T2",
+"q": "Con el marcado HEPRZ1-2OL (S) 12/20 kV 1$\\times$150 mm$^2$ K Al + H16 se puede afirmar que el cable dispone de pantalla de cobre.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 29",
+"Modelo nov-25 n.º 11",
+"Final ene-26 n.º 31"
+],
+"veces": 3,
+"ex": 3,
+"e": "H16 = pantalla metálica de 16 mm$^2$; sin indicar Al, es de <b>cobre</b> (los HEPRZ1 llevan pantalla de hilos de Cu). HEPR = aislamiento, Z1 = cubierta de poliolefina, 2OL = obturación en conductor y pantalla, K Al = conductor compacto de aluminio.",
+"r": "T2_Presentación p. 48-49 y 59-61",
+"tw": "T2·07",
+"qm": "Con el marcado HEPRZ1-2OL (S) 12/20 kV 1$\\times$150 mm$^2$ K Al + H16 se puede afirmar que el cable dispone de <mark>pantalla</mark> de <mark>cobre.</mark>",
+"twm": "Con el marcado HEPRZ1-2OL (S) 12/20 kV 1$\\times$150 mm$^2$ K Al + H16 se puede afirmar que el cable dispone de <mark>doble aislamiento</mark> de <mark>papel aceite.</mark>"
+},
+{
+"id": "T2·04",
+"tema": "T2",
+"q": "La obturación radial consiste en sellar perimetralmente el cable mediante una vaina estanca que, en algunos casos (como las vainas de aluminio), también puede cumplir la función de pantalla.",
+"a": "V",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 19",
+"Final ene-26 n.º 39",
+"Autoev. T2 n.º 15"
+],
+"veces": 3,
+"ex": 2,
+"e": "Obturación radial: cinta metálica estanca que envuelve el cable (con función de pantalla). La longitudinal usa polvos o cintas absorbentes en la pantalla o en la cuerda.",
+"r": "T2_Presentación p. 27; solución oficial T2_Texto p. 29, n.º 15"
+},
+{
+"id": "T2·05",
+"tema": "T2",
+"q": "La rigidez dieléctrica del aislamiento de PVC es peor que la del aislamiento XLPE.",
+"a": "F",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 16",
+"Final ene-26 n.º 36"
+],
+"veces": 2,
+"ex": 2,
+"e": "Tabla de rigidez: PVC 200-400 kV/cm frente a XLPE 300 kV/cm, así que no es “peor”. El PVC no se usa en AT por su alta $\\tan\\delta$ (pérdidas dieléctricas), no por su rigidez.",
+"r": "T2_Presentación p. 14; solución oficial T2_Texto p. 29, n.º 5 y 21"
+},
+{
+"id": "T2·06",
+"tema": "T2",
+"q": "Las letras “S+” indican que los cables tienen propiedades de “no propagadores del fuego”.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 15",
+"Final ene-26 n.º 35"
+],
+"veces": 2,
+"ex": 2,
+"e": "La designación “S+” no existe. Las que hay son S, AS y AS+.",
+"r": "T2_Presentación p. 38",
+"tw": "T2·28",
+"qm": "Las letras <mark>“S+”</mark> indican que los cables tienen propiedades de “no propagadores del fuego”.",
+"twm": "Las letras <mark>“AS”</mark> indican que los cables tienen propiedades de “no propagadores del fuego”."
+},
+{
+"id": "T2·07",
+"tema": "T2",
+"q": "Con el marcado HEPRZ1-2OL (S) 12/20 kV 1$\\times$150 mm$^2$ K Al + H16 se puede afirmar que el cable dispone de doble aislamiento de papel aceite.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 31",
+"Final jul-25 n.º 31"
+],
+"veces": 2,
+"ex": 2,
+"e": "El aislamiento es HEPR (seco). Papel-aceite no aparece en la designación.",
+"r": "T2_Presentación p. 48",
+"tw": "T2·03",
+"qm": "Con el marcado HEPRZ1-2OL (S) 12/20 kV 1$\\times$150 mm$^2$ K Al + H16 se puede afirmar que el cable dispone de <mark>doble aislamiento</mark> de <mark>papel aceite.</mark>",
+"twm": "Con el marcado HEPRZ1-2OL (S) 12/20 kV 1$\\times$150 mm$^2$ K Al + H16 se puede afirmar que el cable dispone de <mark>pantalla</mark> de <mark>cobre.</mark>"
+},
+{
+"id": "T2·08",
+"tema": "T2",
+"q": "Un cable aislado precisa una capa semiconductora externa situada entre el aislamiento principal y la pantalla del cable.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 2"
+],
+"veces": 1,
+"ex": 1,
+"e": "Homogeneiza el campo en el aislamiento y evita descargas parciales.",
+"r": "T2_Presentación p. 18-19",
+"tw": "T2·02",
+"qm": "Un cable aislado precisa una capa semiconductora externa situada entre <mark>el aislamiento principal y</mark> la pantalla del cable.",
+"twm": "Un cable aislado precisa una capa semiconductora externa situada entre la pantalla del cable <mark>y la cubierta.</mark>"
+},
+{
+"id": "T2·09",
+"tema": "T2",
+"q": "Entre la capa semiconductora interna de un cable y el aislamiento principal no deben aparecer cavidades de aire, para evitar que se produzcan descargas parciales.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 40"
+],
+"veces": 1,
+"ex": 1,
+"e": "Una cavidad dentro del campo del aislamiento soporta un campo $\\varepsilon_r$ veces mayor y se ioniza: descargas parciales. La semiconductora está para que esa interfaz no tenga huecos.",
+"r": "T2_Presentación p. 19; solución oficial T2_Texto p. 29, n.º 17 y 18",
+"tw": "T2·10",
+"qm": "Entre la capa semiconductora interna de un cable <mark>y el aislamiento principal</mark> no deben aparecer cavidades de aire, para evitar que se produzcan descargas parciales.",
+"twm": "Entre <mark>los alambres del conductor y</mark> la capa semiconductora interna de un cable no deben aparecer cavidades de aire, para evitar que se produzcan descargas parciales."
+},
+{
+"id": "T2·10",
+"tema": "T2",
+"q": "Entre los alambres del conductor y la capa semiconductora interna de un cable no deben aparecer cavidades de aire, para evitar que se produzcan descargas parciales.",
+"a": "F",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 20"
+],
+"veces": 1,
+"ex": 1,
+"e": "La semiconductora está al potencial del conductor: en los huecos entre alambres y semiconductora no hay campo y no hay descargas. Precisamente para eso existe la semiconductora. Garnacho reescribió la frase en 2026 (“entre semiconductora y aislamiento”) como verdadera.",
+"r": "T2_Presentación p. 18-19; solución oficial T2_Texto p. 29, n.º 17",
+"tw": "T2·09",
+"qm": "Entre <mark>los alambres del conductor y</mark> la capa semiconductora interna de un cable no deben aparecer cavidades de aire, para evitar que se produzcan descargas parciales.",
+"twm": "Entre la capa semiconductora interna de un cable <mark>y el aislamiento principal</mark> no deben aparecer cavidades de aire, para evitar que se produzcan descargas parciales."
+},
+{
+"id": "T2·11",
+"tema": "T2",
+"q": "La pantalla de un cable puede estar constituida solo por alambres de hilos de cobre, sin banda metálica.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 5"
+],
+"veces": 1,
+"ex": 1,
+"e": "Pantalla de alambres de Cu o Al, con o sin contraespira.",
+"r": "T2_Presentación p. 23"
+},
+{
+"id": "T2·12",
+"tema": "T2",
+"q": "La pantalla de un cable puede estar constituida por alambres de cobre con una banda metálica instalada en espiral que los recubra.",
+"a": "V",
+"c": 2,
+"src": [
+"Final jul-25 n.º 5"
+],
+"veces": 1,
+"ex": 1,
+"e": "Es la pantalla de alambres con contraespira.",
+"r": "T2_Presentación p. 23"
+},
+{
+"id": "T2·13",
+"tema": "T2",
+"q": "El campo eléctrico en la cubierta de un cable aislado de alta tensión es igual que en un cable de media tensión.",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-25 n.º 28"
+],
+"veces": 1,
+"ex": 1,
+"e": "La pantalla (puesta a tierra) confina el campo en el aislamiento: en la cubierta es <b>nulo</b> en ambos.",
+"r": "T2_Presentación p. 22"
+},
+{
+"id": "T2·14",
+"tema": "T2",
+"q": "En un cable tripolar con una sola pantalla para los tres conductores, el campo eléctrico se produce entre cada conductor y la pantalla, pero es nulo entre conductores de fase.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 10"
+],
+"veces": 1,
+"ex": 1,
+"e": "Con una pantalla común el campo <b>no es radial</b>: hay componente tangencial y campo entre fases. El oficial da como falso “los tripolares con una sola pantalla tienen campo radial”.",
+"r": "T2_Presentación p. 22; solución oficial T2_Texto p. 29, n.º 7"
+},
+{
+"id": "T2·15",
+"tema": "T2",
+"q": "Si un cable dispone de armadura no precisa pantalla.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 3"
+],
+"veces": 1,
+"ex": 1,
+"e": "Funciones distintas: la pantalla confina el campo eléctrico y deriva corrientes capacitivas y de defecto; la armadura protege mecánicamente.",
+"r": "T2_Presentación p. 22 y 24"
+},
+{
+"id": "T2·16",
+"tema": "T2",
+"q": "Las armaduras de los cables tripolares pueden ser de material ferromagnético.",
+"a": "V",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 10"
+],
+"veces": 1,
+"ex": 1,
+"e": "En el tripolar las tres corrientes suman cero y el flujo neto sobre la armadura se compensa.",
+"r": "T2_Presentación p. 24",
+"tw": "T2·01",
+"qm": "Las armaduras de los cables <mark>tripolares pueden</mark> ser de material ferromagnético.",
+"twm": "Las armaduras de los cables <mark>unipolares deben</mark> ser de material ferromagnético."
+},
+{
+"id": "T2·17",
+"tema": "T2",
+"q": "Si un cable tiene armadura, por ella puede circular corriente.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 3"
+],
+"veces": 1,
+"ex": 1,
+"e": "Es un conductor que envuelve al cable: se inducen corrientes (existen pérdidas en armadura, $\\lambda_2$).",
+"r": "T6_Presentación p. 6; T5_Presentación p. 29"
+},
+{
+"id": "T2·18",
+"tema": "T2",
+"q": "En la armadura de un cable no se inducen corrientes.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 23"
+],
+"veces": 1,
+"ex": 1,
+"e": "Se inducen como en cualquier envolvente metálica; por eso la norma calcula $\\lambda_2$.",
+"r": "T6_Presentación p. 6"
+},
+{
+"id": "T2·19",
+"tema": "T2",
+"q": "Si la armadura de un cable es de aluminio no se inducen corrientes.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-26 n.º 3"
+],
+"veces": 1,
+"ex": 1,
+"e": "El aluminio es conductor: se inducen corrientes. El material no magnético solo evita las pérdidas por histéresis.",
+"r": "T2_Presentación p. 24"
+},
+{
+"id": "T2·20",
+"tema": "T2",
+"q": "El etileno propileno de alto módulo (HEPR) se utiliza como aislamiento principal de un cable para una red de $U_n=20$ kV cuando se precisan temperaturas de trabajo en régimen permanente superiores a 90 ºC.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 1"
+],
+"veces": 1,
+"ex": 1,
+"e": "El HEPR (cables de MT, UNE-HD 620) admite 105 ºC, frente a los 90 ºC del XLPE.",
+"r": "T2_Presentación p. 45-46; solución oficial T2_Texto p. 29, n.º 4",
+"tw": "T2·21",
+"qm": "El <mark>etileno propileno de alto módulo</mark> (HEPR) <mark>se utiliza como</mark> aislamiento principal de un cable <mark>para una red</mark> de <mark>$U_n=20$</mark> kV cuando se precisan temperaturas de trabajo en régimen permanente superiores a 90 ºC.",
+"twm": "El HEPR <mark>es un material utilizado para el</mark> aislamiento principal de un cable de <mark>220</mark> kV cuando se precisan temperaturas de trabajo en régimen permanente superiores a 90 ºC."
+},
+{
+"id": "T2·21",
+"tema": "T2",
+"q": "El HEPR es un material utilizado para el aislamiento principal de un cable de 220 kV cuando se precisan temperaturas de trabajo en régimen permanente superiores a 90 ºC.",
+"a": "F",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 21"
+],
+"veces": 1,
+"ex": 1,
+"e": "El HEPR (105 ºC) es de cables de MT, hasta 18/30 kV. El EPR llega a 220 kV, pero a 90 ºC. En 2026 Garnacho cambió la frase a $U_n=20$ kV para hacerla verdadera.",
+"r": "T2_Presentación p. 15-16, 45-46",
+"tw": "T2·20",
+"qm": "El HEPR <mark>es un material utilizado para el</mark> aislamiento principal de un cable de <mark>220</mark> kV cuando se precisan temperaturas de trabajo en régimen permanente superiores a 90 ºC.",
+"twm": "El <mark>etileno propileno de alto módulo</mark> (HEPR) <mark>se utiliza como</mark> aislamiento principal de un cable <mark>para una red</mark> de <mark>$U_n=20$</mark> kV cuando se precisan temperaturas de trabajo en régimen permanente superiores a 90 ºC."
+},
+{
+"id": "T2·22",
+"tema": "T2",
+"q": "El polietileno (PE) es un material utilizado para el aislamiento principal entre conductor y pantalla de un cable de 220 kV.",
+"a": "V",
+"c": 2,
+"src": [
+"Final jul-25 n.º 1"
+],
+"veces": 1,
+"ex": 1,
+"e": "La gráfica de tensiones nominales máximas da para el PE hasta 400 kV. Hoy domina el XLPE, pero el PE se usa (se ha usado) a 220 kV.",
+"r": "T2_Presentación p. 15",
+"n": "Es la frase menos segura de este tema: la IA la dio como F. Si no la tienes clara, déjala en blanco."
+},
+{
+"id": "T2·23",
+"tema": "T2",
+"q": "Las cubiertas de poliolefina emiten más humos opacos que las de polietileno.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 7"
+],
+"veces": 1,
+"ex": 1,
+"e": "Emisión de humos: PVC > PE > TPO > TPR. Las poliolefinas ignífugas se usan precisamente para reducir humos.",
+"r": "T2_Presentación p. 41; solución oficial T2_Texto p. 29, n.º 9",
+"tw": "T2·24",
+"qm": "Las cubiertas de poliolefina <mark>emiten más humos opacos</mark> que las de polietileno.",
+"twm": "Las cubiertas de poliolefina <mark>presentan peor comportamiento mecánico</mark> que las de polietileno."
+},
+{
+"id": "T2·24",
+"tema": "T2",
+"q": "Las cubiertas de poliolefina presentan peor comportamiento mecánico que las de polietileno.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 7"
+],
+"veces": 1,
+"ex": 1,
+"e": "Comportamiento mecánico: <b>PE > TPO > PVC > TPR</b>. “La ignifugación de las poliolefinas reduce sus características mecánicas”.",
+"r": "T2_Presentación p. 42",
+"tw": "T2·23",
+"qm": "Las cubiertas de poliolefina <mark>presentan peor comportamiento mecánico</mark> que las de polietileno.",
+"twm": "Las cubiertas de poliolefina <mark>emiten más humos opacos</mark> que las de polietileno."
+},
+{
+"id": "T2·25",
+"tema": "T2",
+"q": "Las cubiertas de PVC presentan peor comportamiento mecánico que las de polietileno (PE).",
+"a": "V",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 27"
+],
+"veces": 1,
+"ex": 1,
+"e": "PE > TPO > PVC > TPR. El PE se usa cuando se necesita un alto comportamiento mecánico.",
+"r": "T2_Presentación p. 42; solución oficial T2_Texto p. 29, n.º 11"
+},
+{
+"id": "T2·26",
+"tema": "T2",
+"q": "Las cubiertas de PVC presentan comportamiento mecánico peor que las cubiertas de poliolefina (Z1).",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-26 n.º 7"
+],
+"veces": 1,
+"ex": 1,
+"e": "Z1 = poliolefina libre de halógenos (en los cables (S) es TPO). En la tabla, PE > TPO > PVC: la poliolefina es mejor que el PVC. Solo la TPR (cables AS) es peor.",
+"r": "T2_Presentación p. 42, 45 y 48",
+"n": "El alumno de ene-2026 la marcó F."
+},
+{
+"id": "T2·27",
+"tema": "T2",
+"q": "Las letras “AS” indican que los cables tienen propiedades de “no propagadores del incendio”.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 35"
+],
+"veces": 1,
+"ex": 1,
+"e": "(S) = no propagador de la <i>llama</i>; (AS) = no propagador del <i>incendio</i>; (AS+) = resistente al fuego.",
+"r": "T2_Presentación p. 38 y 48",
+"tw": "T2·06",
+"qm": "Las letras <mark>“AS”</mark> indican que los cables tienen propiedades de “no propagadores del <mark>incendio”.</mark>",
+"twm": "Las letras <mark>“S+”</mark> indican que los cables tienen propiedades de “no propagadores del <mark>fuego”.</mark>"
+},
+{
+"id": "T2·28",
+"tema": "T2",
+"q": "Las letras “AS” indican que los cables tienen propiedades de “no propagadores del fuego”.",
+"a": "V",
+"c": 2,
+"src": [
+"Final jul-25 n.º 35"
+],
+"veces": 1,
+"ex": 1,
+"e": "“Fuego” se usa aquí como “incendio”. No confundir con “resistente al fuego”, que es AS+.",
+"r": "T2_Presentación p. 38",
+"tw": "T2·06",
+"qm": "Las letras <mark>“AS”</mark> indican que los cables tienen propiedades de “no propagadores del fuego”.",
+"twm": "Las letras <mark>“S+”</mark> indican que los cables tienen propiedades de “no propagadores del fuego”."
+},
+{
+"id": "T2·29",
+"tema": "T2",
+"q": "Los cables tienen sección segmentada para secciones no superiores a 1000 mm$^2$.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 25"
+],
+"veces": 1,
+"ex": 1,
+"e": "La cuerda segmentada (Milliken) se usa <b>por encima</b> de 1000 mm$^2$, para reducir el efecto pelicular.",
+"r": "T5_Presentación p. 11"
+},
+{
+"id": "T2·30",
+"tema": "T2",
+"q": "La capa semiconductora interna de un cable trata de evitar la aparición de cavidades de aire o gas entre el conductor y el aislamiento.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 17"
+],
+"veces": 1,
+"ex": 0,
+"e": "Rellena las irregularidades de la cuerda y deja una superficie lisa para el aislamiento.",
+"r": "Solución oficial T2_Texto p. 29, n.º 17"
+},
+{
+"id": "T2·31",
+"tema": "T2",
+"q": "El campo eléctrico en el interior de una cavidad plana paralela a la pantalla es superior al del aislamiento de su alrededor, con una constante de proporcionalidad igual a la permitividad relativa del aislamiento.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 18"
+],
+"veces": 1,
+"ex": 0,
+"e": "Continuidad de $D$ normal: $E_{\\text{cav}}=\\varepsilon_r\\,E_{\\text{aisl}}$.",
+"r": "Solución oficial T2_Texto p. 29, n.º 18"
+},
+{
+"id": "T2·32",
+"tema": "T2",
+"q": "La capa termorretráctil interna y externa de un cable se utiliza para evitar la aparición de descargas parciales.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 6"
+],
+"veces": 1,
+"ex": 0,
+"e": "Lo que evita las descargas parciales son las capas <i>semiconductoras</i>, no capas termorretráctiles.",
+"r": "Solución oficial T2_Texto p. 29, n.º 6"
+},
+{
+"id": "T2·33",
+"tema": "T2",
+"q": "Los cables tripolares con una sola pantalla tienen campo radial.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 7"
+],
+"veces": 1,
+"ex": 0,
+"e": "Solo es radial si cada conductor tiene su propia pantalla.",
+"r": "T2_Presentación p. 22; solución oficial T2_Texto p. 29, n.º 7"
+},
+{
+"id": "T2·34",
+"tema": "T2",
+"q": "El etileno propileno de alto módulo (HEPR) se utiliza como aislamiento principal de un cable cuando se requiere mayor temperatura de trabajo.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 4"
+],
+"veces": 1,
+"ex": 0,
+"e": "El HEPR admite 105 ºC en servicio.",
+"r": "T2_Presentación p. 45; solución oficial T2_Texto p. 29, n.º 4"
+},
+{
+"id": "T2·35",
+"tema": "T2",
+"q": "La rigidez dieléctrica del PVC es inferior a la del polietileno (PE).",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 21"
+],
+"veces": 1,
+"ex": 0,
+"e": "Según la tabla de la diapositiva, PVC 200-400 kV/cm frente a PE 50 kV/cm.",
+"r": "T2_Presentación p. 14; solución oficial T2_Texto p. 29, n.º 21"
+},
+{
+"id": "T2·36",
+"tema": "T2",
+"q": "El PVC no se utiliza como aislamiento principal de los cables de AT por su alto valor de $\\tan\\delta$, relacionado con las pérdidas dieléctricas.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 5"
+],
+"veces": 1,
+"ex": 0,
+"e": "$W_d=\\omega C U_0^2\\tan\\delta$: con la $\\tan\\delta$ del PVC las pérdidas son enormes (96 683 W/km frente a 24 W/km del XLPE en el ejemplo).",
+"r": "T5_Presentación p. 46-49; solución oficial T2_Texto p. 29, n.º 5"
+},
+{
+"id": "T2·37",
+"tema": "T2",
+"q": "Como ejemplo de aislamiento termoestable cabe citar el polietileno reticulado (XLPE).",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 2"
+],
+"veces": 1,
+"ex": 0,
+"e": "XLPE y EPR son termoestables; PVC y PE, termoplásticos.",
+"r": "T2_Presentación p. 16; solución oficial T2_Texto p. 29, n.º 2"
+},
+{
+"id": "T2·38",
+"tema": "T2",
+"q": "El aislamiento PPLP (papel impregnado y capas de polipropileno) se utiliza para las tensiones más elevadas, de hasta 760 kV.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 22"
+],
+"veces": 1,
+"ex": 0,
+"e": "Gráfica de tensiones nominales máximas: PPLP 760 kV.",
+"r": "T2_Presentación p. 15; solución oficial T2_Texto p. 29, n.º 22"
+},
+{
+"id": "T2·39",
+"tema": "T2",
+"q": "Los pulsos de descargas parciales en un aislamiento de XLPE defectuoso pueden ser del orden de cientos de pC.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 23"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial.",
+"r": "Solución oficial T2_Texto p. 29, n.º 23"
+},
+{
+"id": "T2·40",
+"tema": "T2",
+"q": "Para la misma sección eléctrica de un cable de MT de cobre y otro de aluminio, el cobre pesa vez y media más que el aluminio.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 1"
+],
+"veces": 1,
+"ex": 0,
+"e": "A igual resistencia, el Al necesita $\\approx1{,}6$ veces más sección; masa $\\dfrac{8{,}9}{2{,}7\\cdot1{,}6}\\approx2$: el cobre pesa del orden del <b>doble</b>.",
+"r": "Solución oficial T2_Texto p. 29, n.º 1"
+},
+{
+"id": "T2·41",
+"tema": "T2",
+"q": "Si un conductor de Al y otro de Cu tienen la misma sección eléctrica, las pérdidas por efecto Joule por kilómetro son las mismas con la misma corriente.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 19"
+],
+"veces": 1,
+"ex": 0,
+"e": "“Misma sección eléctrica” = misma resistencia: $P=R I^2$ igual.",
+"r": "Solución oficial T2_Texto p. 29, n.º 19"
+},
+{
+"id": "T2·42",
+"tema": "T2",
+"q": "Las poliolefinas ignífugas se utilizan en las cubiertas de los cables para reducir la emisión de humos.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 9"
+],
+"veces": 1,
+"ex": 0,
+"e": "Libres de halógenos y con baja emisión de humos.",
+"r": "T2_Presentación p. 41 y 45; solución oficial T2_Texto p. 29, n.º 9"
+},
+{
+"id": "T2·43",
+"tema": "T2",
+"q": "Los humos emitidos por el PVC son tóxicos.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 10"
+],
+"veces": 1,
+"ex": 0,
+"e": "Contienen halógenos (cloro): gases ácidos y corrosivos.",
+"r": "T2_Presentación p. 41; solución oficial T2_Texto p. 29, n.º 10"
+},
+{
+"id": "T2·44",
+"tema": "T2",
+"q": "El polietileno (PE) se utiliza para las cubiertas cuando se precisa un alto comportamiento mecánico.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 11"
+],
+"veces": 1,
+"ex": 0,
+"e": "El PE es el material de cubierta con mejores características mecánicas (aunque arde con facilidad).",
+"r": "T2_Presentación p. 42; solución oficial T2_Texto p. 29, n.º 11"
+},
+{
+"id": "T2·45",
+"tema": "T2",
+"q": "Las letras “AS” significan que la cubierta es resistente al fuego.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 12"
+],
+"veces": 1,
+"ex": 0,
+"e": "AS = no propagador del incendio. Resistente al fuego es AS+.",
+"r": "T2_Presentación p. 38; solución oficial T2_Texto p. 29, n.º 12"
+},
+{
+"id": "T2·46",
+"tema": "T2",
+"q": "Un cable calificado con la letra “E” (clase de reacción al fuego) es de muy bajas exigencias frente al fuego, pero cumple el criterio de no propagación de la llama.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 24"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial (clases Euroclase del CPR).",
+"r": "Solución oficial T2_Texto p. 29, n.º 24"
+},
+{
+"id": "T2·47",
+"tema": "T2",
+"q": "La designación “d1” frente al fuego significa que las gotas y partículas inflamadas no persisten más de 1 s.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 25"
+],
+"veces": 1,
+"ex": 0,
+"e": "d1 = gotas o partículas inflamadas que no persisten más de <b>10 s</b> (d0 = sin gotas inflamadas).",
+"r": "Solución oficial T2_Texto p. 29, n.º 25"
+},
+{
+"id": "T2·48",
+"tema": "T2",
+"q": "La letra “R” para el aislamiento principal significa que se trata de EPR.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 13"
+],
+"veces": 1,
+"ex": 0,
+"e": "R = XLPE; D = EPR; HEPR = EPR de alto módulo.",
+"r": "T2_Presentación p. 48; solución oficial T2_Texto p. 29, n.º 13"
+},
+{
+"id": "T2·49",
+"tema": "T2",
+"q": "La letra “V” para la cubierta exterior significa que es de PVC.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 14"
+],
+"veces": 1,
+"ex": 0,
+"e": "Designación UNE: V = PVC.",
+"r": "T2_Presentación p. 48-49; solución oficial T2_Texto p. 29, n.º 14"
+},
+{
+"id": "T2·50",
+"tema": "T2",
+"q": "La cuerda segmentada o Milliken se utiliza para secciones superiores a 1000 mm$^2$ con el fin de reducir la capacidad eléctrica a 50 Hz.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 20"
+],
+"veces": 1,
+"ex": 0,
+"e": "La sección es correcta, pero el fin es reducir el <b>efecto pelicular</b> (la resistencia en alterna), no la capacidad.",
+"r": "T5_Presentación p. 11; solución oficial T2_Texto p. 29, n.º 20"
+},
+{
+"id": "T3·01",
+"tema": "T3",
+"q": "El cono deflector de las terminaciones de los cables de AT se dispone en las proximidades del final de la semiconductora para suavizar el campo eléctrico.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 9",
+"Autoev. T3 n.º 24"
+],
+"veces": 2,
+"ex": 1,
+"e": "Donde se corta la semiconductora externa el campo se concentra; el deflector lo reparte.",
+"r": "T3_Presentación p. 30; solución oficial T3_Texto p. 27, n.º 24",
+"tw": "T3·02",
+"qm": "El cono deflector de <mark>las terminaciones</mark> de los cables de AT se dispone en las proximidades del <mark>final de la semiconductora</mark> para suavizar el campo eléctrico.",
+"twm": "El cono deflector de <mark>los empalmes</mark> de los cables de AT se dispone en las proximidades del <mark>manguito</mark> para suavizar el campo eléctrico."
+},
+{
+"id": "T3·02",
+"tema": "T3",
+"q": "El cono deflector de los empalmes de los cables de AT se dispone en las proximidades del manguito para suavizar el campo eléctrico.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 29",
+"Autoev. T3 n.º 20"
+],
+"veces": 2,
+"ex": 1,
+"e": "Sobre el manguito va el <i>electrodo de unión</i>. Los deflectores van al final de la semiconductora externa de cada cable.",
+"r": "T3_Presentación p. 18-20; solución oficial T3_Texto p. 27, n.º 20",
+"tw": "T3·01",
+"qm": "El cono deflector de <mark>los empalmes</mark> de los cables de AT se dispone en las proximidades del <mark>manguito</mark> para suavizar el campo eléctrico.",
+"twm": "El cono deflector de <mark>las terminaciones</mark> de los cables de AT se dispone en las proximidades del <mark>final de la semiconductora</mark> para suavizar el campo eléctrico."
+},
+{
+"id": "T3·03",
+"tema": "T3",
+"q": "Debe asegurarse la continuidad de la pantalla en un empalme de cross-bonding entre los tramos contiguos primero y segundo.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 30",
+"Autoev. T3 n.º 1"
+],
+"veces": 2,
+"ex": 1,
+"e": "En el cross-bonding los empalmes son <b>seccionados</b>: las pantallas se cortan y se transponen en la caja de conexión.",
+"r": "T3_Presentación p. 15 y 20; T4.1 p. 18-19; solución oficial T3_Texto p. 27, n.º 1",
+"tw": "T3·05",
+"qm": "Debe asegurarse la continuidad de la pantalla en un empalme de <mark>cross-bonding</mark> entre los tramos contiguos <mark>primero y segundo.</mark>",
+"twm": "Debe asegurarse la continuidad de la pantalla en un empalme de <mark>solid bonding</mark> entre los tramos contiguos."
+},
+{
+"id": "T3·04",
+"tema": "T3",
+"q": "En el final de la semiconductora interna de cada tramo de cable que se interconecta a través de un empalme se deben disponer conos deflectores.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-26 n.º 9"
+],
+"veces": 1,
+"ex": 1,
+"e": "Es en el final de la semiconductora <b>externa</b>, que es donde el campo es muy elevado.",
+"r": "T3_Presentación p. 18-20; solución oficial T3_Texto p. 27, n.º 19"
+},
+{
+"id": "T3·05",
+"tema": "T3",
+"q": "Debe asegurarse la continuidad de la pantalla en un empalme de solid bonding entre los tramos contiguos.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 10"
+],
+"veces": 1,
+"ex": 1,
+"e": "En solid bonding la pantalla es continua de extremo a extremo (empalme normal).",
+"r": "T3_Presentación p. 15; T4.1 p. 8-9",
+"tw": "T3·03",
+"qm": "Debe asegurarse la continuidad de la pantalla en un empalme de <mark>solid bonding</mark> entre los tramos contiguos.",
+"twm": "Debe asegurarse la continuidad de la pantalla en un empalme de <mark>cross-bonding</mark> entre los tramos contiguos <mark>primero y segundo.</mark>"
+},
+{
+"id": "T3·06",
+"tema": "T3",
+"q": "En un tramo de cable en configuración single-point con puesta a tierra en la subestación se debe utilizar un empalme seccionado para la continuidad del cable.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 4"
+],
+"veces": 1,
+"ex": 1,
+"e": "Un empalme seccionado <i>interrumpe</i> la pantalla. Dentro de un tramo single-point la pantalla debe ser continua hasta su única puesta a tierra; solo se secciona si la línea se parte en dos tramos SP.",
+"r": "T4.1 p. 13 y 15"
+},
+{
+"id": "T3·07",
+"tema": "T3",
+"q": "Para conectar las dos pantallas de los empalmes seccionados a los limitadores de las cajas de conexión es más adecuado utilizar cables unipolares que cables concéntricos.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 10"
+],
+"veces": 1,
+"ex": 1,
+"e": "El cable concéntrico tiene <b>menor inductancia</b>, que es lo que interesa frente a sobretensiones.",
+"r": "T3_Presentación p. 20; T3_Texto p. 11; solución oficial T3_Texto p. 27, n.º 18",
+"tw": "T3·10",
+"qm": "<mark>Para conectar las dos pantallas de</mark> los empalmes seccionados <mark>a</mark> los <mark>limitadores</mark> de las <mark>cajas de conexión es más adecuado utilizar cables unipolares que cables concéntricos.</mark>",
+"twm": "<mark>Los cables concéntricos utilizados en</mark> los empalmes seccionados <mark>presentan menor inductancia que</mark> los <mark>cables unipolares, lo que es mejor desde el punto de vista</mark> de las <mark>sobretensiones.</mark>"
+},
+{
+"id": "T3·08",
+"tema": "T3",
+"q": "Está prohibido que las terminaciones utilizadas para GIS contengan en su interior aislamientos fluidos (por ejemplo, aceite de silicona).",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 9"
+],
+"veces": 1,
+"ex": 1,
+"e": "Las terminaciones GIS pueden ser secas o rellenas de fluido aislante (p. ej. aceite de silicona): no está prohibido.",
+"r": "T3_Presentación p. 45; solución oficial T3_Texto p. 27, n.º 12 y 22"
+},
+{
+"id": "T3·09",
+"tema": "T3",
+"q": "El campo eléctrico en los extremos finales de la capa semiconductora externa del cable, al confeccionar un empalme, es muy elevado, por lo que pueden aparecer descargas parciales si hay cavidades.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 19"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es el motivo de los conos deflectores.",
+"r": "Solución oficial T3_Texto p. 27, n.º 19"
+},
+{
+"id": "T3·10",
+"tema": "T3",
+"q": "Los cables concéntricos utilizados en los empalmes seccionados presentan menor inductancia que los cables unipolares, lo que es mejor desde el punto de vista de las sobretensiones.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 18"
+],
+"veces": 1,
+"ex": 0,
+"e": "El concéntrico, con menor inductancia, limita mejor las sobretensiones en la conexión pantalla-limitador.",
+"r": "Solución oficial T3_Texto p. 27, n.º 18",
+"tw": "T3·07",
+"qm": "<mark>Los cables concéntricos utilizados en</mark> los empalmes seccionados <mark>presentan menor inductancia que</mark> los cables unipolares, <mark>lo</mark> que <mark>es mejor desde el punto de vista de las sobretensiones.</mark>",
+"twm": "<mark>Para conectar las dos pantallas de</mark> los empalmes seccionados <mark>a</mark> los <mark>limitadores de las cajas de conexión es más adecuado utilizar</mark> cables unipolares que <mark>cables concéntricos.</mark>"
+},
+{
+"id": "T3·11",
+"tema": "T3",
+"q": "El aislamiento frente a impulsos tipo rayo entre las pantallas seccionadas de un empalme seccionado de 220 kV es de decenas de kV.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 17"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial.",
+"r": "Solución oficial T3_Texto p. 27, n.º 17"
+},
+{
+"id": "T3·12",
+"tema": "T3",
+"q": "Las terminaciones de 220 kV de cables de XLPE no deben utilizar aislamientos fluidos.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 12"
+],
+"veces": 1,
+"ex": 0,
+"e": "Muchas terminaciones de exterior de AT se rellenan de fluido aislante (aceite de silicona); no está prohibido.",
+"r": "T3_Presentación p. 45; solución oficial T3_Texto p. 27, n.º 12"
+},
+{
+"id": "T3·13",
+"tema": "T3",
+"q": "En el interior de las terminaciones de cable instaladas en las GIS debe utilizarse gas aislante, como SF$_6$ o gases alternativos.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 22"
+],
+"veces": 1,
+"ex": 0,
+"e": "El SF$_6$ está en la GIS, fuera de la terminación. Dentro, la terminación es seca o con fluido aislante.",
+"r": "T3_Presentación p. 45; solución oficial T3_Texto p. 27, n.º 22"
+},
+{
+"id": "T3·14",
+"tema": "T3",
+"q": "Al montar una terminación, el terminal se monta por encima de la semiconductora que cubre los alambres del conductor, para evitar cavidades entre los alambres y el terminal.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 2"
+],
+"veces": 1,
+"ex": 0,
+"e": "El terminal se conecta sobre el conductor desnudo (se retira la semiconductora); ahí no hay campo y no importa.",
+"r": "Solución oficial T3_Texto p. 27, n.º 2"
+},
+{
+"id": "T3·15",
+"tema": "T3",
+"q": "Para montar una terminación monobloc no es preciso retirar la semiconductora, ya que el bloque premontado en fábrica incluye todo lo necesario.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 3"
+],
+"veces": 1,
+"ex": 0,
+"e": "Hay que preparar el cable: retirar cubierta, pantalla y semiconductora externa hasta la cota indicada.",
+"r": "Solución oficial T3_Texto p. 27, n.º 3"
+},
+{
+"id": "T3·16",
+"tema": "T3",
+"q": "El cuerpo monobloc premontado en fábrica de un empalme incluye la semiconductora para cubrir el manguito, los conos deflectores premoldeados, el aislamiento principal, la pantalla y la cubierta.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 4"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es la descripción del cuerpo premoldeado.",
+"r": "T3_Presentación p. 18-20; solución oficial T3_Texto p. 27, n.º 4"
+},
+{
+"id": "T3·17",
+"tema": "T3",
+"q": "La línea de fuga de una terminación de porcelana se obtiene multiplicando la línea de fuga específica (mm/kV) según el nivel de contaminación por la tensión más elevada de la red, $U_s$.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 5"
+],
+"veces": 1,
+"ex": 0,
+"e": "$\\text{l}_{\\text{fuga}}=\\text{l}_{\\text{esp}}\\,[\\text{mm/kV}]\\cdot U_s\\,[\\text{kV}]$.",
+"r": "Solución oficial T3_Texto p. 27, n.º 5"
+},
+{
+"id": "T3·18",
+"tema": "T3",
+"q": "Las terminaciones de interior no requieren línea de fuga mínima.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 23"
+],
+"veces": 1,
+"ex": 0,
+"e": "También la requieren (menor que las de exterior).",
+"r": "Solución oficial T3_Texto p. 27, n.º 23"
+},
+{
+"id": "T3·19",
+"tema": "T3",
+"q": "Las terminaciones de porcelana tienen una esperanza de vida mayor que las de aislamientos poliméricos.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 6"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial.",
+"r": "Solución oficial T3_Texto p. 27, n.º 6"
+},
+{
+"id": "T3·20",
+"tema": "T3",
+"q": "En caso de explosión, una terminación de porcelana es más peligrosa que una de aislamiento polimérico.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 7"
+],
+"veces": 1,
+"ex": 0,
+"e": "La porcelana proyecta fragmentos.",
+"r": "Solución oficial T3_Texto p. 27, n.º 7"
+},
+{
+"id": "T3·21",
+"tema": "T3",
+"q": "El montaje de accesorios monobloc por método enfilable se logra liberando una estructura que mantiene el cuerpo pre-expandido para que recupere su estado contraído.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 8"
+],
+"veces": 1,
+"ex": 0,
+"e": "Eso describe el <i>contráctil en frío</i>. El enfilable se empuja (“enfila”) sobre el cable.",
+"r": "Solución oficial T3_Texto p. 27, n.º 8"
+},
+{
+"id": "T3·22",
+"tema": "T3",
+"q": "El montaje de un empalme por calor consiste en que el diámetro del cuerpo sea inferior al del cable y se vaya expandiendo al aplicar calor.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 9"
+],
+"veces": 1,
+"ex": 0,
+"e": "Es al revés: el termorretráctil parte de un diámetro <i>mayor</i> y se <i>contrae</i> con calor.",
+"r": "Solución oficial T3_Texto p. 27, n.º 9"
+},
+{
+"id": "T3·23",
+"tema": "T3",
+"q": "La tecnología termorretráctil consiste en adaptar un elemento pre-expandido, de diámetro inicial mayor que el del cable, aplicando calor.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 10"
+],
+"veces": 1,
+"ex": 0,
+"e": "Definición de termorretráctil.",
+"r": "Solución oficial T3_Texto p. 27, n.º 10"
+},
+{
+"id": "T3·24",
+"tema": "T3",
+"q": "La tornillería especial con cabeza de autocizallamiento permite alcanzar un par de apriete constante en el manguito de unión de los conductores.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 11"
+],
+"veces": 1,
+"ex": 0,
+"e": "La cabeza rompe al par previsto.",
+"r": "Solución oficial T3_Texto p. 27, n.º 11"
+},
+{
+"id": "T3·25",
+"tema": "T3",
+"q": "Las terminaciones enchufables solo se utilizan en media tensión, hasta 36 kV.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 13"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial.",
+"r": "Solución oficial T3_Texto p. 27, n.º 13"
+},
+{
+"id": "T3·26",
+"tema": "T3",
+"q": "Las terminaciones enchufables son apantalladas, de forma que el campo eléctrico está plenamente confinado dentro de la terminación.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 14"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial.",
+"r": "Solución oficial T3_Texto p. 27, n.º 14"
+},
+{
+"id": "T3·27",
+"tema": "T3",
+"q": "Las terminaciones enchufables no pueden fijarse con un sistema atornillable.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 15"
+],
+"veces": 1,
+"ex": 0,
+"e": "Existen enchufables atornillables.",
+"r": "Solución oficial T3_Texto p. 27, n.º 15"
+},
+{
+"id": "T3·28",
+"tema": "T3",
+"q": "Las terminaciones enchufables disponen de divisor capacitivo integrado para verificar la presencia de tensión.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 16"
+],
+"veces": 1,
+"ex": 0,
+"e": "Dato de la solución oficial.",
+"r": "Solución oficial T3_Texto p. 27, n.º 16"
+},
+{
+"id": "T3·29",
+"tema": "T3",
+"q": "Las terminaciones enchufables usan una funda de alta constante dieléctrica que hace de deflector para suavizar el campo en el final de la semiconductora.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 25"
+],
+"veces": 1,
+"ex": 0,
+"e": "Control del campo por permitividad (en vez de un cono geométrico).",
+"r": "Solución oficial T3_Texto p. 27, n.º 25"
+},
+{
+"id": "T3·30",
+"tema": "T3",
+"q": "Las terminaciones de AT (p. ej. de 220 kV) deben separar el herraje de la terminación, que se pone a tierra, del herraje de la pantalla del cable, que podrá ponerse a tierra o no.",
+"a": "V",
+"c": 3,
+"src": [
+"Autoev. T3 n.º 21"
+],
+"veces": 1,
+"ex": 0,
+"e": "Así se puede dejar la pantalla sin conectar a tierra (single-point, con limitador).",
+"r": "T3_Texto p. 20; solución oficial T3_Texto p. 27, n.º 21"
+},
+{
+"id": "T4.1·01",
+"tema": "T4.1",
+"q": "En las pantallas de los cables en configuración single-point no circulan corrientes capacitivas.",
+"a": "F",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 1",
+"Final ene-26 n.º 21"
+],
+"veces": 2,
+"ex": 2,
+"e": "En single-point no hay corriente de <i>circulación</i> (bucle abierto), pero la corriente <i>capacitiva</i> sí circula: se deriva a tierra por el extremo puesto a tierra.",
+"r": "T4.1 p. 4 y 16; T2_Presentación p. 22"
+},
+{
+"id": "T4.1·02",
+"tema": "T4.1",
+"q": "El cable equipotencial, instalado a lo largo de un tramo en single-point, se debe conectar a tierra en un solo extremo.",
+"a": "F",
+"c": 2,
+"src": [
+"Final jul-25 n.º 8",
+"Final ene-26 n.º 8"
+],
+"veces": 2,
+"ex": 2,
+"e": "El cable equipotencial va a tierra en <b>ambos</b> extremos, porque por él debe retornar la corriente de falta. Lo que va a tierra en un solo extremo es la <i>pantalla</i>.",
+"r": "T4.1 p. 14",
+"tw": "T4.1·09",
+"qm": "El cable equipotencial, instalado a lo largo de un tramo en single-point, se debe conectar a tierra en <mark>un solo extremo.</mark>",
+"twm": "El cable equipotencial, instalado a lo largo de un tramo <mark>con las pantallas</mark> en single-point, se debe conectar a tierra en <mark>ambos extremos.</mark>"
+},
+{
+"id": "T4.1·03",
+"tema": "T4.1",
+"q": "Los limitadores de sobretensión de las cajas de interconexión de pantallas del cross-bonding se instalan entre cada conductor principal y su pantalla.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 26",
+"Final jul-25 n.º 6"
+],
+"veces": 2,
+"ex": 2,
+"e": "Se instalan entre la <b>pantalla y tierra</b>, en las cajas de transposición.",
+"r": "T4.1 p. 19-21"
+},
+{
+"id": "T4.1·04",
+"tema": "T4.1",
+"q": "Las pérdidas en las pantallas por las corrientes capacitivas no se producirían en cables en configuración single-point.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 21"
+],
+"veces": 1,
+"ex": 1,
+"e": "La corriente capacitiva sí circula por la pantalla hacia el extremo puesto a tierra, y produce pérdidas. Lo que no hay en single-point es corriente de <i>circulación</i> ($\\lambda_1'=0$).",
+"r": "T4.1 p. 4 y 16",
+"tw": "T4.1·05",
+"qm": "Las pérdidas en las pantallas por <mark>las corrientes capacitivas</mark> no se <mark>producirían</mark> en cables en configuración single-point.",
+"twm": "Las pérdidas en las pantallas por <mark>acoplamiento de corriente (circulación)</mark> no se <mark>producen</mark> en cables en configuración single-point."
+},
+{
+"id": "T4.1·05",
+"tema": "T4.1",
+"q": "Las pérdidas en las pantallas por acoplamiento de corriente (circulación) no se producen en cables en configuración single-point.",
+"a": "V",
+"c": 2,
+"src": [
+"Final jul-25 n.º 21"
+],
+"veces": 1,
+"ex": 1,
+"e": "Sin un segundo punto a tierra no se cierra el bucle: $\\lambda_1'=0$. Solo quedan las corrientes de Foucault ($\\lambda_1''$).",
+"r": "T4.1 p. 16",
+"tw": "T4.1·04",
+"qm": "Las pérdidas en las pantallas por <mark>acoplamiento de corriente (circulación)</mark> no se <mark>producen</mark> en cables en configuración single-point.",
+"twm": "Las pérdidas en las pantallas por <mark>las corrientes capacitivas</mark> no se <mark>producirían</mark> en cables en configuración single-point."
+},
+{
+"id": "T4.1·06",
+"tema": "T4.1",
+"q": "En un tramo en single-point puesto a tierra en la subestación, se debe poner un limitador de tensión en el extremo opuesto para limitar las tensiones inducidas de 50 Hz que se produzcan entre la pantalla y tierra.",
+"a": "V",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 24"
+],
+"veces": 1,
+"ex": 1,
+"e": "En el extremo no puesto a tierra va un descargador entre pantalla y tierra, uno por fase, para proteger la cubierta frente a las tensiones inducidas en caso de cortocircuito (de 50 Hz).",
+"r": "T4.1 p. 13",
+"n": "Matiz: en régimen permanente la tensión se acota por la longitud ($<50$ V), no por el limitador."
+},
+{
+"id": "T4.1·07",
+"tema": "T4.1",
+"q": "En single-point, si la pantalla no se conecta a tierra en la subestación, se pone un limitador de tensión en ese extremo, entre la pantalla y tierra.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 4"
+],
+"veces": 1,
+"ex": 1,
+"e": "El extremo no puesto a tierra lleva el descargador entre pantalla y tierra.",
+"r": "T4.1 p. 13"
+},
+{
+"id": "T4.1·08",
+"tema": "T4.1",
+"q": "Los limitadores de sobretensión de las cajas de pantallas de los “single-point” se instalan entre el conductor principal y la pantalla del cable.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-26 n.º 6"
+],
+"veces": 1,
+"ex": 1,
+"e": "Van entre la <b>pantalla y tierra</b>.",
+"r": "T4.1 p. 13"
+},
+{
+"id": "T4.1·09",
+"tema": "T4.1",
+"q": "El cable equipotencial, instalado a lo largo de un tramo con las pantallas en single-point, se debe conectar a tierra en ambos extremos.",
+"a": "V",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 28"
+],
+"veces": 1,
+"ex": 1,
+"e": "Por él retorna la corriente de falta para reducir las tensiones inducidas en las pantallas: tiene que estar a tierra en los <b>dos</b> extremos.",
+"r": "T4.1 p. 14; T4.1_Sobretensiones_1 p. 3",
+"tw": "T4.1·02",
+"qm": "El cable equipotencial, instalado a lo largo de un tramo <mark>con las pantallas</mark> en single-point, se debe conectar a tierra en <mark>ambos extremos.</mark>",
+"twm": "El cable equipotencial, instalado a lo largo de un tramo en single-point, se debe conectar a tierra en <mark>un solo extremo.</mark>"
+},
+{
+"id": "T4.1·10",
+"tema": "T4.1",
+"q": "La función del cable equipotencial en single-point es reducir las sobretensiones inducidas en la pantalla cuando se produce un cortocircuito a tierra.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 8"
+],
+"veces": 1,
+"ex": 1,
+"e": "“Asegurar un correcto funcionamiento de los descargadores y reducir las tensiones inducidas en las pantallas en caso de cortocircuito”.",
+"r": "T4.1 p. 14"
+},
+{
+"id": "T4.1·11",
+"tema": "T4.1",
+"q": "En cada cruce de pantallas de los tramos en cross-bonding se deben disponer limitadores para limitar las tensiones transitorias inducidas entre la pantalla y tierra.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 4"
+],
+"veces": 1,
+"ex": 1,
+"e": "Cada caja de transposición lleva sus limitadores pantalla-tierra.",
+"r": "T4.1 p. 19-21"
+},
+{
+"id": "T4.1·12",
+"tema": "T4.1",
+"q": "Cuando se produce un cortocircuito fase-tierra no se producen sobretensiones en las pantallas si están conectadas en cross-bonding.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 7"
+],
+"veces": 1,
+"ex": 1,
+"e": "Con un defecto desequilibrado sí hay tensiones inducidas en las pantallas (se compensan solo en parte); por eso hacen falta los limitadores.",
+"r": "T4.1 p. 21; T4.1_Sobretensiones_1 p. 14-16"
+},
+{
+"id": "T4.1·13",
+"tema": "T4.1",
+"q": "No se producen corrientes inducidas en las pantallas en caso de cortocircuito fase-tierra siempre que las pantallas estén en cross-bonding equilibrado.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-26 n.º 27"
+],
+"veces": 1,
+"ex": 1,
+"e": "El equilibrio solo anula la suma de tensiones con corrientes <i>equilibradas</i>. Con un defecto fase-tierra circula corriente por las pantallas (la falta puede volver por ellas).",
+"r": "T4.1 p. 21"
+},
+{
+"id": "T4.2·01",
+"tema": "T4.2",
+"q": "Cuando se instala un cable de media tensión enterrado no se precisa disponer de cinta de aviso de peligro si la instalación es bajo tubo.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 32",
+"Final jul-25 n.º 32",
+"Modelo nov-25 n.º 12",
+"Final ene-26 n.º 32"
+],
+"veces": 4,
+"ex": 4,
+"e": "El tubo sustituye a la placa de protección, pero “<b>sí se requiere la cinta de señalización</b>”.",
+"r": "T4.2 p. 12 y 17"
+},
+{
+"id": "T4.2·02",
+"tema": "T4.2",
+"q": "Está prohibido instalar cables de alta tensión debajo de depósitos de gas o combustible.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 15",
+"Modelo nov-25 n.º 35",
+"Final ene-26 n.º 15"
+],
+"veces": 3,
+"ex": 3,
+"e": "Está <b>permitido</b> con condiciones: tubos resistentes, distancia mínima de 1,2 m y tubos que sobresalgan 2 m por cada extremo.",
+"r": "T4.2 p. 50",
+"tw": "T4.2·06",
+"qm": "Está prohibido instalar cables de alta tensión <mark>debajo de depósitos</mark> de gas <mark>o</mark> combustible.",
+"twm": "Está prohibido instalar cables de alta tensión <mark>en galerías con conducciones</mark> de gas combustible."
+},
+{
+"id": "T4.2·03",
+"tema": "T4.2",
+"q": "Los cables de comunicaciones que transcurren en una misma galería o conducción deben instalarse por encima de los cables de alta tensión.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 34",
+"Final jul-25 n.º 34",
+"Modelo nov-25 n.º 14"
+],
+"veces": 3,
+"ex": 3,
+"e": "La ITC pide soportes separados y agrupar por tensiones (AT en un lado; BT, control y comunicaciones en otro), no “por encima”.",
+"r": "T4.2 p. 19 y 24"
+},
+{
+"id": "T4.2·04",
+"tema": "T4.2",
+"q": "Si los cables de media tensión se instalan bajo tubo, el reglamento permite reducir la profundidad de soterramiento.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 39",
+"Final jul-25 n.º 39"
+],
+"veces": 2,
+"ex": 2,
+"e": "Las profundidades mínimas son las mismas (0,6 m en acera, 0,8 m en calzada). Los 40-50 cm que aparecen son de la guía del REBT (BT).",
+"r": "T4.2 p. 12-13 y 17"
+},
+{
+"id": "T4.2·05",
+"tema": "T4.2",
+"q": "En el apoyo en el que se realiza la transición de una línea aérea a cable aislado de AT siempre deben disponerse pararrayos para limitar las sobretensiones propagadas al cable.",
+"a": "F",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 9",
+"Final jul-25 n.º 29"
+],
+"veces": 2,
+"ex": 2,
+"e": "La ITC dice “<i>cuando deban</i> instalarse protecciones contra sobretensiones …{} la conexión será lo más corta posible”: no son obligatorias siempre.",
+"r": "T4.2 p. 34-36"
+},
+{
+"id": "T4.2·06",
+"tema": "T4.2",
+"q": "Está prohibido instalar cables de alta tensión en galerías con conducciones de gas combustible.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 15"
+],
+"veces": 1,
+"ex": 1,
+"e": "“En ningún caso podrán coexistir en la misma galería instalaciones eléctricas e instalaciones de gas o líquidos inflamables”.",
+"r": "T4.2 p. 20",
+"tw": "T4.2·02",
+"qm": "Está prohibido instalar cables de alta tensión <mark>en galerías con conducciones</mark> de gas combustible.",
+"twm": "Está prohibido instalar cables de alta tensión <mark>debajo de depósitos</mark> de gas <mark>o</mark> combustible."
+},
+{
+"id": "T4.2·07",
+"tema": "T4.2",
+"q": "Los cables de baja tensión soterrados deben instalarse por encima de los cables de alta tensión.",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-26 n.º 34"
+],
+"veces": 1,
+"ex": 1,
+"e": "“Siempre que sea posible, los cables de AT discurrirán por debajo de los de BT”, a 0,25 m.",
+"r": "T4.2 p. 45"
+},
+{
+"id": "T4.2·08",
+"tema": "T4.2",
+"q": "En el apoyo de la transición de la línea aérea a cable aislado debe disponerse un pararrayos para limitar las sobretensiones en la terminación del cable y las que se propaguen por él.",
+"a": "F",
+"c": 1,
+"src": [
+"Final ene-26 n.º 29"
+],
+"veces": 1,
+"ex": 1,
+"e": "La ITC-LAT 06 dice “<i>cuando deban</i> instalarse protecciones contra sobretensiones…”: no son obligatorias. Pero sin el “siempre” la frase es más defendible: en la práctica casi siempre se ponen.",
+"r": "T4.2 p. 36; T3_Texto p. 21",
+"n": "Discutible. Recomendación: en blanco, salvo que el profesor lo aclare."
+},
+{
+"id": "T5·01",
+"tema": "T5",
+"q": "La inductancia de los cables aislados dispuestos en tresbolillo es menor que la de los mismos cables dispuestos en capa.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 24",
+"Final jul-25 n.º 24",
+"Modelo nov-25 n.º 4",
+"Final ene-26 n.º 24"
+],
+"veces": 4,
+"ex": 4,
+"e": "$L=\\dfrac{\\mu_0}{8\\pi}+\\dfrac{\\mu_0}{2\\pi}\\ln\\dfrac{2\\,\\mathrm{DMG}}{d_c}$. En trébol $\\mathrm{DMG}=s$; en capa $\\mathrm{DMG}=\\sqrt[3]{2}\\,s$: mayor DMG, mayor $L$. En la tabla, $X$ en trébol 0,054 frente a 0,069 $\\Omega$/km en capa.",
+"r": "T5_Presentación p. 16 y 19-21"
+},
+{
+"id": "T5·02",
+"tema": "T5",
+"q": "El efecto pelicular es menor para los cables segmentados que para los cables circulares de alambres.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 26",
+"Final jul-25 n.º 26",
+"Modelo nov-25 n.º 6",
+"Final ene-26 n.º 26"
+],
+"veces": 4,
+"ex": 4,
+"e": "Gráfica $\\Delta R$: compactado > hueco > segmentado. Los segmentos aislados obligan a la corriente a repartirse por toda la sección.",
+"r": "T5_Presentación p. 11"
+},
+{
+"id": "T5·03",
+"tema": "T5",
+"q": "La $\\tan\\delta$ de los cables aislados aumenta según envejece el cable.",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-25 n.º 14",
+"Final jul-25 n.º 14",
+"Final ene-26 n.º 14"
+],
+"veces": 3,
+"ex": 3,
+"e": "El envejecimiento (humedad, arborescencias) degrada el aislamiento: aumentan sus pérdidas, es decir, la $\\tan\\delta$.",
+"r": "T5_Presentación p. 46",
+"tw": "T5·14",
+"qm": "La $\\tan\\delta$ de los cables aislados <mark>aumenta</mark> según envejece el cable.",
+"twm": "La $\\tan\\delta$ de los cables aislados <mark>disminuye</mark> según envejece el cable."
+},
+{
+"id": "T5·04",
+"tema": "T5",
+"q": "La reactancia mutua de los cables con las pantallas a tierra en ambos extremos provoca una disminución de la resistencia (efectiva) equivalente del conductor en un circuito trifásico equilibrado.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 31",
+"Final jul-25 n.º 11",
+"Final ene-26 n.º 11"
+],
+"veces": 3,
+"ex": 3,
+"e": "La resistencia <b>aumenta</b>; la que disminuye es la reactancia.",
+"r": "T5_Presentación p. 23",
+"tw": "T5·17",
+"qm": "La reactancia mutua de los cables con las pantallas a tierra en ambos extremos provoca <mark>una disminución</mark> de la resistencia <mark>(efectiva)</mark> equivalente del conductor en un circuito trifásico equilibrado.",
+"twm": "La reactancia mutua de los cables con las pantallas a tierra en ambos extremos provoca <mark>un aumento</mark> de la resistencia equivalente del conductor en un circuito trifásico equilibrado."
+},
+{
+"id": "T5·05",
+"tema": "T5",
+"q": "En un circuito trifásico de cables, cuanto mayor sea el diámetro de la cuerda del conductor, mayor será el efecto pelicular.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 25",
+"Final jul-25 n.º 25"
+],
+"veces": 2,
+"ex": 2,
+"e": "$x_s^2=\\dfrac{8\\pi f}{R'}10^{-7}k_s$ crece al bajar $R'$ (más sección y diámetro), y crece $y_s$. Se nota a partir de unos 185 mm$^2$.",
+"r": "T5_Presentación p. 9-11"
+},
+{
+"id": "T5·06",
+"tema": "T5",
+"q": "El efecto de proximidad de un circuito trifásico de cables en capa es menor que el de cables en triángulo equilátero, para el mismo tipo de cable y la misma separación $S$ entre cables contiguos.",
+"a": "V",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 5",
+"Final ene-26 n.º 25"
+],
+"veces": 2,
+"ex": 2,
+"e": "La tabla de Garnacho, con los cables en contacto (misma $S$), da $y_p=0{,}20\\,\\%$ en capa frente a $0{,}33\\,\\%$ en trébol: en capa usa la distancia media $\\sqrt[3]{S\\cdot S\\cdot 2S}=1{,}26\\,S$. Los cables de los extremos tienen un vecino a $2S$.",
+"r": "T5_Presentación p. 16 (tabla Al-240)",
+"n": "La nota de la UNE 21144-1-1 (ap. 2.1.4) usa $s$ = distancia entre fases adyacentes, lo que daría el mismo $y_p$. Se responde V porque es el criterio de la diapositiva del profesor. Si dudas, déjala en blanco."
+},
+{
+"id": "T5·07",
+"tema": "T5",
+"q": "El efecto pelicular es mayor para los cables con conductores de mayor sección.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 27"
+],
+"veces": 1,
+"ex": 1,
+"e": "$x_s^2=\\dfrac{8\\pi f}{R'}10^{-7}k_s$ crece al bajar $R'$ (más sección), e $y_s=\\dfrac{x_s^4}{192+0{,}8x_s^4}$ crece con $x_s$.",
+"r": "T5_Presentación p. 9-11"
+},
+{
+"id": "T5·08",
+"tema": "T5",
+"q": "El efecto pelicular en los cables de cuerda hueca es menor que en los de cuerda compacta.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 5"
+],
+"veces": 1,
+"ex": 1,
+"e": "En la gráfica de $\\Delta R$, la curva del hueco va por debajo de la del compactado: el centro, que apenas conduce en alterna, ya no tiene cobre.",
+"r": "T5_Presentación p. 11"
+},
+{
+"id": "T5·09",
+"tema": "T5",
+"q": "El efecto de proximidad es mayor para los cables con conductores de mayor sección.",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-25 n.º 27"
+],
+"veces": 1,
+"ex": 1,
+"e": "$y_p$ crece con $x_p$ (al bajar $R'$) y con $d_c/s$.",
+"r": "T5_Presentación p. 13"
+},
+{
+"id": "T5·10",
+"tema": "T5",
+"q": "La longitud crítica de un cable depende en mayor medida de su tensión que de su sección.",
+"a": "V",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 33"
+],
+"veces": 1,
+"ex": 1,
+"e": "$L_c=\\dfrac{\\sqrt3\\,I_z}{\\omega C U}$. Al subir la sección suben $I_z$ y $C$ a la vez y casi se compensan; la tensión manda: más de 260 km a 20 kV frente a unas decenas a 400 kV.",
+"r": "T5_Presentación p. 57-59; T5_Texto p. 33-35",
+"tw": "T5·11",
+"qm": "La longitud crítica de un cable depende en mayor medida de su tensión que de su <mark>sección.</mark>",
+"twm": "La longitud crítica de un cable depende en mayor medida de su tensión que de su <mark>capacidad entre conductor y pantalla.</mark>"
+},
+{
+"id": "T5·11",
+"tema": "T5",
+"q": "La longitud crítica de un cable depende en mayor medida de su tensión que de su capacidad entre conductor y pantalla.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-26 n.º 13"
+],
+"veces": 1,
+"ex": 1,
+"e": "$L_c=\\dfrac{\\sqrt3\\,I_z}{\\omega C U}$ es inversamente proporcional a $C$ y a $U$ por igual: “<i>inversamente proporcional a la capacidad y a la tensión</i>”.",
+"r": "T5_Texto p. 33; T5_Presentación p. 57",
+"tw": "T5·10",
+"qm": "La longitud crítica de un cable depende en mayor medida de su tensión que de su <mark>capacidad entre conductor y pantalla.</mark>",
+"twm": "La longitud crítica de un cable depende en mayor medida de su tensión que de su <mark>sección.</mark>"
+},
+{
+"id": "T5·12",
+"tema": "T5",
+"q": "Las pérdidas dieléctricas son mayores en los cables de PVC que en los de XLPE.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 36"
+],
+"veces": 1,
+"ex": 1,
+"e": "$W_d=\\omega C U_0^2\\tan\\delta$: la $\\tan\\delta$ del PVC es muy alta.",
+"r": "T5_Presentación p. 46-49",
+"tw": "T5·13",
+"qm": "Las pérdidas <mark>dieléctricas</mark> son mayores en los cables de PVC que en los de XLPE.",
+"twm": "Las pérdidas <mark>en las pantallas</mark> son mayores en los cables de PVC que en los de XLPE."
+},
+{
+"id": "T5·13",
+"tema": "T5",
+"q": "Las pérdidas en las pantallas son mayores en los cables de PVC que en los de XLPE.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 36"
+],
+"veces": 1,
+"ex": 1,
+"e": "$\\lambda_1$ depende de $R_s$, $X_m$ y la geometría, no del aislamiento. La solución oficial da como falso “la $\\tan\\delta$ es la causa principal de las pérdidas en pantallas”.",
+"r": "T5_Presentación p. 29-35; solución oficial T2_Texto p. 29, n.º 3",
+"tw": "T5·12",
+"qm": "Las pérdidas <mark>en las pantallas</mark> son mayores en los cables de PVC que en los de XLPE.",
+"twm": "Las pérdidas <mark>dieléctricas</mark> son mayores en los cables de PVC que en los de XLPE."
+},
+{
+"id": "T5·14",
+"tema": "T5",
+"q": "La $\\tan\\delta$ de los cables aislados disminuye según envejece el cable.",
+"a": "F",
+"c": 2,
+"src": [
+"Modelo nov-25 n.º 34"
+],
+"veces": 1,
+"ex": 1,
+"e": "Al revés: aumenta.",
+"r": "T5_Presentación p. 46",
+"tw": "T5·03",
+"qm": "La $\\tan\\delta$ de los cables aislados <mark>disminuye</mark> según envejece el cable.",
+"twm": "La $\\tan\\delta$ de los cables aislados <mark>aumenta</mark> según envejece el cable."
+},
+{
+"id": "T5·15",
+"tema": "T5",
+"q": "El campo eléctrico en la proximidad de la pantalla de un cable es mayor que en la proximidad del conductor.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 28"
+],
+"veces": 1,
+"ex": 1,
+"e": "$E(x)=\\dfrac{U_0}{x\\ln(R/r)}$: máximo junto al conductor ($x=r$) y mínimo junto a la pantalla.",
+"r": "T5_Presentación p. 42-43"
+},
+{
+"id": "T5·16",
+"tema": "T5",
+"q": "La capacidad entre fases de un cable tripolar de campo radial es mayor con las pantallas a tierra en ambos extremos que con las pantallas a tierra en un solo extremo.",
+"a": "F",
+"c": 2,
+"src": [
+"Final ene-25 n.º 13"
+],
+"veces": 1,
+"ex": 1,
+"e": "En campo radial cada fase tiene su pantalla: la capacidad es conductor-pantalla y <b>entre fases es nula</b>, se conecte como se conecte.",
+"r": "T5_Presentación p. 40"
+},
+{
+"id": "T5·17",
+"tema": "T5",
+"q": "La reactancia mutua de los cables con las pantallas a tierra en ambos extremos provoca un aumento de la resistencia equivalente del conductor en un circuito trifásico equilibrado.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 11"
+],
+"veces": 1,
+"ex": 1,
+"e": "La corriente que circula por las pantallas añade pérdidas que se ven como una $R$ aparente mayor: $\\Delta R=R_s\\dfrac{X_m^2}{R_s^2+X_m^2}$ (y $X$ disminuye).",
+"r": "T5_Presentación p. 23 y 29-31",
+"tw": "T5·04",
+"qm": "La reactancia mutua de los cables con las pantallas a tierra en ambos extremos provoca <mark>un aumento</mark> de la resistencia equivalente del conductor en un circuito trifásico equilibrado.",
+"twm": "La reactancia mutua de los cables con las pantallas a tierra en ambos extremos provoca <mark>una disminución</mark> de la resistencia <mark>(efectiva)</mark> equivalente del conductor en un circuito trifásico equilibrado."
+},
+{
+"id": "T5·18",
+"tema": "T5",
+"q": "El factor de pérdidas por la pantalla de un cable, $\\lambda'$, es despreciable si la resistencia de su pantalla es despreciable ($R_s\\approx0$).",
+"a": "V",
+"c": 2,
+"src": [
+"Final ene-26 n.º 28"
+],
+"veces": 1,
+"ex": 1,
+"e": "$\\lambda_1'=\\dfrac{R_s}{R}\\cdot\\dfrac{1}{1+\\left(\\dfrac{R_s}{X}\\right)^2}\\to0$ si $R_s\\to0$: circula mucha corriente, pero sin resistencia no disipa.",
+"r": "T5_Presentación p. 16 y 30"
+},
+{
+"id": "T5·19",
+"tema": "T5",
+"q": "La tangente de pérdidas de un cable es la causa principal de las pérdidas en sus pantallas.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 3"
+],
+"veces": 1,
+"ex": 0,
+"e": "Las pérdidas en pantallas son por inducción magnética (corrientes de circulación y de Foucault). La $\\tan\\delta$ da las pérdidas <i>dieléctricas</i>.",
+"r": "Solución oficial T2_Texto p. 29, n.º 3"
+},
+{
+"id": "T5·20",
+"tema": "T5",
+"q": "Las pérdidas dieléctricas de un cable son menores cuanto mayor es la tensión aplicada.",
+"a": "F",
+"c": 3,
+"src": [
+"Autoev. T2 n.º 16"
+],
+"veces": 1,
+"ex": 0,
+"e": "$W_d=\\omega C U_0^2\\tan\\delta$: crecen con el <b>cuadrado</b> de la tensión. Por eso son despreciables en MT ($U<30$ kV) y no en AT.",
+"r": "T5_Presentación p. 46; solución oficial T2_Texto p. 29, n.º 16"
+},
+{
+"id": "T6·01",
+"tema": "T6",
+"q": "La corriente máxima admisible de un cable instalado bajo tubo es mayor que la de un cable instalado directamente en el terreno.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 33",
+"Final jul-25 n.º 33",
+"Modelo nov-25 n.º 13",
+"Final ene-26 n.º 33"
+],
+"veces": 4,
+"ex": 4,
+"e": "El aire del tubo añade una resistencia térmica ($T_4'$) y la $I_z$ baja. En las tablas de la ITC, la tabla 12 (bajo tubo) da menos amperios que la tabla 6 (enterrado).",
+"r": "T6_Presentación p. 34-38; T4.2 p. 61 y 69"
+},
+{
+"id": "T6·02",
+"tema": "T6",
+"q": "La resistividad eléctrica del terreno afecta a la corriente máxima admisible del cable (o a su calentamiento).",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 37",
+"Final ene-25 n.º 40",
+"Final jul-25 n.º 17"
+],
+"veces": 3,
+"ex": 3,
+"e": "Lo que interviene en $T_4$ y en el factor de la tabla 8 es la resistividad <b>térmica</b> $\\rho_T$ (K$\\cdot$m/W), no la eléctrica.",
+"r": "T6_Presentación p. 21-24; T4.2 p. 63-64",
+"tw": "T6·03",
+"qm": "La resistividad <mark>eléctrica</mark> del terreno afecta a la corriente máxima admisible del cable <mark>(o a su calentamiento).</mark>",
+"twm": "La resistividad <mark>térmica</mark> del terreno afecta a la corriente máxima admisible del cable."
+},
+{
+"id": "T6·03",
+"tema": "T6",
+"q": "La resistividad térmica del terreno afecta a la corriente máxima admisible del cable.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-26 n.º 17"
+],
+"veces": 1,
+"ex": 1,
+"e": "$T_4=\\dfrac{\\rho_T}{2\\pi}\\ln\\!\\left(u+\\sqrt{u^2-1}\\right)$, con $u=2L/D_e$; más $\\rho_T$, menos $I_z$.",
+"r": "T6_Presentación p. 21-24",
+"tw": "T6·02",
+"qm": "La resistividad <mark>térmica</mark> del terreno afecta a la corriente máxima admisible del cable.",
+"twm": "La resistividad <mark>eléctrica</mark> del terreno afecta a la corriente máxima admisible del cable <mark>(o a su calentamiento).</mark>"
+},
+{
+"id": "T6·04",
+"tema": "T6",
+"q": "La corriente máxima admisible de un cable es tanto mayor cuanto mayor sea la profundidad de soterramiento.",
+"a": "F",
+"c": 3,
+"src": [
+"Final jul-25 n.º 40"
+],
+"veces": 1,
+"ex": 1,
+"e": "Más profundidad, más $T_4$ (crece con $\\ln(4L/D_e)$) y menos $I_z$. El factor de la tabla 11 baja al aumentar la profundidad.",
+"r": "T6_Presentación p. 21-24; T4.2 p. 66"
+},
+{
+"id": "T6·05",
+"tema": "T6",
+"q": "Con aislamiento de XLPE en un cable de 220 kV, la corriente máxima admisible es la misma si la cubierta es de PE que si es de PVC.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 1"
+],
+"veces": 1,
+"ex": 1,
+"e": "Cambia $T_3$ (la $\\rho_T$ del PVC es mayor que la del PE) y, además, la cubierta tiene su propio límite de temperatura, que puede limitar la $I_z$.",
+"r": "T6_Presentación p. 14 y 44"
+},
+{
+"id": "T7·01",
+"tema": "T7",
+"q": "Los cables de mayor sección pueden sobrecargarse durante más tiempo, sin superar la temperatura máxima de régimen permanente, que los de menor sección, si son del mismo tipo y parten de la misma temperatura inicial.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 37",
+"Modelo nov-25 n.º 17",
+"Final ene-26 n.º 37"
+],
+"veces": 3,
+"ex": 3,
+"e": "La constante de tiempo crece con la sección: $\\tau=\\left(\\dfrac{I_{cc}}{I_z}\\right)^2 t_{cc}$, con $I_{cc}\\propto S$ y una $I_z$ que crece menos que $S$.",
+"r": "T7_Presentación p. 6-13"
+},
+{
+"id": "T7·02",
+"tema": "T7",
+"q": "La corriente máxima admisible de cortocircuito de un cable es directamente proporcional al tiempo de cortocircuito.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 18",
+"Final ene-26 n.º 38"
+],
+"veces": 2,
+"ex": 2,
+"e": "Adiabático: $I_{cc}\\sqrt{t}=K\\,S$, es decir, $I_{cc}\\propto\\dfrac{1}{\\sqrt t}$. Disminuye con el tiempo.",
+"r": "T7_Presentación p. 39-45"
+},
+{
+"id": "T7·03",
+"tema": "T7",
+"q": "Un cable no debe funcionar nunca a una corriente superior a su intensidad admisible.",
+"a": "F",
+"c": 3,
+"src": [
+"Modelo nov-25 n.º 8"
+],
+"veces": 1,
+"ex": 1,
+"e": "Un cable descargado o poco cargado tiene inercia térmica: puede llevar durante un tiempo $I>I_z$ sin superar $\\theta_{\\max}$ (factor de sobrecarga $M=I_{\\text{sob}}/I_z$).",
+"r": "T7_Presentación p. 11-19",
+"tw": "T7·05",
+"qm": "Un cable <mark>no debe funcionar nunca</mark> a <mark>una corriente superior a</mark> su <mark>intensidad</mark> admisible.",
+"twm": "Un cable <mark>se puede llegar</mark> a <mark>sobrecargar térmicamente por encima de</mark> su <mark>temperatura máxima</mark> admisible <mark>durante un determinado tiempo.</mark>"
+},
+{
+"id": "T7·04",
+"tema": "T7",
+"q": "Un cable no se puede sobrecargar térmicamente por encima de su temperatura máxima admisible de régimen permanente.",
+"a": "F",
+"c": 3,
+"src": [
+"Final ene-25 n.º 38"
+],
+"veces": 1,
+"ex": 1,
+"e": "En emergencia se admite superarla durante un tiempo limitado (XLPE hasta 105-130 ºC), a costa de envejecer el cable.",
+"r": "T7_Presentación p. 21-22",
+"tw": "T7·05",
+"qm": "Un cable <mark>no</mark> se puede sobrecargar térmicamente por encima de su temperatura máxima admisible <mark>de régimen permanente.</mark>",
+"twm": "Un cable se puede <mark>llegar a</mark> sobrecargar térmicamente por encima de su temperatura máxima admisible <mark>durante un determinado tiempo.</mark>"
+},
+{
+"id": "T7·05",
+"tema": "T7",
+"q": "Un cable se puede llegar a sobrecargar térmicamente por encima de su temperatura máxima admisible durante un determinado tiempo.",
+"a": "V",
+"c": 3,
+"src": [
+"Final jul-25 n.º 38"
+],
+"veces": 1,
+"ex": 1,
+"e": "Capacidad de emergencia de corta duración: XLPE a 130 ºC con un límite de horas al año y totales.",
+"r": "T7_Presentación p. 21-22",
+"tw": "T7·04",
+"qm": "Un cable se puede <mark>llegar a</mark> sobrecargar térmicamente por encima de su temperatura máxima admisible <mark>durante un determinado tiempo.</mark>",
+"twm": "Un cable <mark>no</mark> se puede sobrecargar térmicamente por encima de su temperatura máxima admisible <mark>de régimen permanente.</mark>"
+},
+{
+"id": "T7·06",
+"tema": "T7",
+"q": "El tiempo de sobrecarga de un cable, para no superar la temperatura máxima en régimen permanente, depende de la sección del cable.",
+"a": "V",
+"c": 3,
+"src": [
+"Final ene-25 n.º 37"
+],
+"veces": 1,
+"ex": 1,
+"e": "La constante de tiempo depende de la sección: $\\tau=\\left(\\dfrac{I_{cc}}{I_z}\\right)^2 t_{cc}$, con $I_{cc}\\propto S$.",
+"r": "T7_Presentación p. 6-13"
+}
+];
+/* ===================== estado y almacenamiento ===================== */
+const KEY='lsat-b1-quiz-v1';
+let ST={};try{ST=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){ST={}}
+ST.q=ST.q||{};ST.opt=ST.opt||{fast:false};ST.fav=ST.fav||{};ST.sims=ST.sims||[];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}}
+function rec(id,good){const s=ST.q[id]||{ok:0,ko:0};good?s.ok++:s.ko++;s.last=good?1:0;ST.q[id]=s;save()}
+const SIM_N=40,PTS_OK=1,PTS_KO=0.5;
+const BYID={};Q.forEach(q=>BYID[q.id]=q);
+let S=null;
+const app=document.getElementById('app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=(x,d=2)=>x.toFixed(d).replace('.',',');
+const $=id=>document.getElementById(id);
+function typeset(el){if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise([el]).catch(()=>{})}else{setTimeout(()=>typeset(el),300)}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const accent=v=>document.documentElement.style.setProperty('--accent',`var(${v})`);
+const dom=q=>ST.q[q.id]&&ST.q[q.id].last===1, failed=q=>ST.q[q.id]&&ST.q[q.id].last===0, seen=q=>!!ST.q[q.id];
+/* muestreo ponderado por veces que ha caído (simulacro) */
+function weighted(list,n){const L=list.map(q=>({q,k:Math.pow(Math.random(),1/(q.veces||1))}));L.sort((a,b)=>b.k-a.k);return L.slice(0,n).map(x=>x.q)}
+/* pares gemelos juntos */
+function twinsList(){const out=[],done={};shuffle(Q.filter(q=>q.tw)).forEach(q=>{if(done[q.id])return;const t=BYID[q.tw];done[q.id]=1;out.push(q);if(t&&!done[t.id]){done[t.id]=1;out.push(t)}});return out}
+
+/* ===================== inicio ===================== */
+function home(){
+  S=null;accent('--c1');
+  const n=Q.length,sn=Q.filter(seen).length,dn=Q.filter(dom).length,fl=Q.filter(failed);
+  const hot=Q.filter(q=>q.veces>=2).sort((a,b)=>b.veces-a.veces),ex=Q.filter(q=>q.ex>0),favs=Q.filter(q=>ST.fav[q.id]);
+  const pend=Q.filter(q=>!seen(q)||failed(q)),tw=Q.filter(q=>q.tw);
+  const last=ST.sims.length?ST.sims[ST.sims.length-1]:null,best=ST.sims.length?Math.max(...ST.sims.map(s=>s.n)):null;
+  app.innerHTML=`
+  <header class="hero"><div class="eyebrow">LSAT · ETSIDI-UPM · Bloque 1</div><h1>Test de teoría</h1>
+  <p>${n} frases de verdadero o falso: todas las de los exámenes (2025-26) y las de los cuestionarios oficiales de Garnacho, comprobadas con las diapositivas y explicadas.</p></header>
+  <div class="stats"><div class="stat"><b>${sn}/${n}</b><span>vistas</span></div><div class="stat"><b style="color:var(--ok)">${dn}</b><span>dominadas</span></div><div class="stat"><b style="color:var(--ko)">${fl.length}</b><span>por repasar</span></div></div>
+  <section class="sec"><h2>Modos de estudio</h2><div class="modes">
+   <button class="mode primary" id="m-sim"><span class="ic">40</span><span><h3>Simulacro de examen</h3><p>40 frases como en el examen, sobre todo de las que más caen. Acierto +1, fallo −0,5, en blanco 0. Se corrige al final.${last?` Última nota: <b>${fmt(last.n,1)}</b> · mejor: <b>${fmt(best,1)}</b>`:''}</p></span><span class="n">/10</span></button>
+   <button class="mode new" id="m-hot"><span class="ic">×2</span><span><h3>Las que más caen</h3><p>Han salido dos o más veces: primero las de 4 y 5</p></span><span class="n">${hot.length}</span></button>
+   <button class="mode" id="m-tw"><span class="ic">≠</span><span><h3>Frases gemelas</h3><p>Pares casi iguales con distinta respuesta, seguidos. Es donde pone las trampas</p></span><span class="n">${tw.length}</span></button>
+   <button class="mode" id="m-ex"><span class="ic">E</span><span><h3>Solo frases de examen</h3><p>Las que han caído alguna vez, en orden aleatorio</p></span><span class="n">${ex.length}</span></button>
+   <button class="mode" id="m-pend" ${pend.length?'':'disabled'}><span class="ic">↻</span><span><h3>Pendientes</h3><p>${pend.length?'Las que no has visto y las que fallaste la última vez':'Todo visto y acertado'}</p></span><span class="n">${pend.length}</span></button>
+   <button class="mode" id="m-fail" ${fl.length?'':'disabled'}><span class="ic" style="color:var(--ko)">!</span><span><h3>Repasar falladas</h3><p>${fl.length?'Las que fallaste la última vez':'Aún no has fallado ninguna'}</p></span><span class="n">${fl.length}</span></button>
+   <button class="mode" id="m-fav" ${favs.length?'':'disabled'}><span class="ic" style="color:#C99A12">★</span><span><h3>Mis marcadas</h3><p>${favs.length?'Las que guardaste con la estrella':'Marca frases con ★ para repasarlas aquí'}</p></span><span class="n">${favs.length}</span></button>
+   <button class="mode" id="m-all"><span class="ic">∑</span><span><h3>Repaso completo</h3><p>Todas, en orden por temas</p></span><span class="n">${n}</span></button>
+   <button class="mode" id="m-rnd"><span class="ic">⤨</span><span><h3>Todas al azar</h3><p>Mismo banco, orden aleatorio</p></span><span class="n">${n}</span></button>
+   <button class="mode" id="m-ideas"><span class="ic">✎</span><span><h3>Ideas clave</h3><p>La chuleta de cada tema: las reglas que resuelven casi todas las frases</p></span><span class="n">${Object.values(IDEAS).reduce((a,b)=>a+b.length,0)}</span></button>
+  </div></section>
+  <section class="sec"><h2>Por tema</h2><div class="temas">
+   ${Object.entries(TEMAS).map(([k,t])=>{const L=Q.filter(q=>q.tema===k),d=L.filter(dom).length;return `<button class="tema" data-t="${k}" style="--c:var(${t.v})"><b>${t.n}</b><span>${t.t} · ${L.length}</span><span class="bar"><i style="width:${L.length?Math.round(100*d/L.length):0}%"></i></span></button>`}).join('')}
+  </div></section>
+  <section class="sec"><div class="opts"><label><input type="checkbox" id="o-fast" ${ST.opt.fast?'checked':''}> Avance rápido: si aciertas, pasa sola a la siguiente (la explicación solo sale al fallar)</label>
+   <button class="linkbtn" id="o-reset">Borrar mi progreso</button></div>
+   <div class="tip"><b>Puntuación del test:</b> acierto +1 · fallo −0,5 · en blanco 0 (mínimo 3 sobre 10). Contestar compensa si aciertas con probabilidad mayor de 1/3. Las frases marcadas <span class="chip dud" style="vertical-align:1px">Dudosa</span> mejor en blanco.<br>Teclado: <b>V</b> / <b>F</b> para responder · <b>B</b> en blanco (simulacro) · <b>Intro</b> para seguir.</div></section>`;
+  const go=(l,nm,md)=>start(l,nm,md);
+  $('m-sim').onclick=()=>go(shuffle(weighted(ex,SIM_N)),'Simulacro de examen','sim');
+  $('m-hot').onclick=()=>go(hot,'Las que más caen');
+  $('m-tw').onclick=()=>go(twinsList(),'Frases gemelas');
+  $('m-ex').onclick=()=>go(shuffle(ex),'Solo frases de examen');
+  $('m-pend').onclick=()=>go(shuffle(pend),'Pendientes');
+  $('m-fail').onclick=()=>go(shuffle(fl),'Repasar falladas');
+  $('m-fav').onclick=()=>go(favs,'Mis marcadas');
+  $('m-all').onclick=()=>go(Q,'Repaso completo');
+  $('m-rnd').onclick=()=>go(shuffle(Q),'Todas al azar');
+  $('m-ideas').onclick=()=>ideas();
+  app.querySelectorAll('.tema').forEach(b=>b.onclick=()=>{const k=b.dataset.t;go(Q.filter(q=>q.tema===k),TEMAS[k].n+' · '+TEMAS[k].t)});
+  $('o-fast').onchange=e=>{ST.opt.fast=e.target.checked;save()};
+  const rb=$('o-reset');rb.onclick=()=>{if(rb.dataset.c){ST.q={};ST.sims=[];save();home()}else{rb.dataset.c=1;rb.textContent='Toca otra vez para confirmar (las marcadas se conservan)'}};
+  typeset(app);window.scrollTo(0,0);
+}
+
+/* ===================== ideas clave ===================== */
+function ideas(){
+  accent('--c1');
+  app.innerHTML=`<div class="top"><div class="toprow"><button class="back" id="b-back">← Inicio</button><div class="title">Ideas clave</div><div class="score"></div></div></div>
+  <p class="lead">Una regla por línea. Si te sabes estas, casi todas las frases salen solas.</p>
+  ${Object.entries(TEMAS).map(([k,t])=>(IDEAS[k]||[]).length?`<section class="idea" style="--c:var(${t.v})"><div class="ihead"><b>${t.n}</b> ${t.t}<button class="btn ghost sm" data-t="${k}">Practicar →</button></div><ul>${IDEAS[k].map(x=>`<li>${x}</li>`).join('')}</ul></section>`:'').join('')}`;
+  $('b-back').onclick=home;
+  app.querySelectorAll('.ihead .btn').forEach(b=>b.onclick=()=>{const k=b.dataset.t;start(Q.filter(q=>q.tema===k),TEMAS[k].n+' · '+TEMAS[k].t)});
+  typeset(app);window.scrollTo(0,0);
+}
+
+/* ===================== sesión ===================== */
+function start(list,name,mode,extra){
+  if(!list.length)return;
+  S=Object.assign({list,name,mode:mode||'study',i:0,res:[],ans:[],pts:0},extra||{});
+  render();
+}
+function chips(q){
+  let h=`<span class="qid">${q.id}</span>`;
+  q.src.forEach(s=>h+=`<span class="chip${s.startsWith('Autoev')?' off':''}">${esc(s)}</span>`);
+  if(q.veces>=2)h+=`<span class="chip hot">Ha caído ${q.veces} veces</span>`;
+  if(q.c===1)h+=`<span class="chip dud">Dudosa</span>`;
+  h+=`<button class="star${ST.fav[q.id]?' on':''}" id="b-star" aria-pressed="${!!ST.fav[q.id]}" title="Marcar para repasar">★</button>`;
+  return h;
+}
+function scoreHTML(){
+  if(S.mode==='sim'){const a=S.res.filter(r=>r!==undefined).length;return `<span>${S.i+1}/${S.list.length}</span><span>${a} resp.</span>`}
+  if(S.mode==='review')return `<span>${S.i+1}/${S.list.length}</span>`;
+  const g=S.res.filter(r=>r===1).length,b=S.res.filter(r=>r===0).length;
+  return `<span>${S.i+1}/${S.list.length}</span><span class="g">✓ ${g}</span><span class="r">✗ ${b}</span>`;
+}
+function render(){
+  const q=S.list[S.i],t=TEMAS[q.tema],sim=S.mode==='sim',rev=S.mode==='review';
+  accent(t.v);
+  app.innerHTML=`
+  <div class="top"><div class="toprow"><button class="back" id="b-back">← Salir</button><div class="title">${esc(S.name)}</div>
+   <div class="score">${scoreHTML()}</div></div>
+   <div class="prog"><i style="width:${100*S.i/S.list.length}%"></i></div></div>
+  <article class="card"><div class="chead">${chips(q)}</div>
+   <div class="cbody"><div class="tag" style="color:var(${t.v})">${t.n} · ${t.t}</div><div class="q" id="qtext">${q.q}</div>
+   <div class="vf"><button class="ch vfb" data-a="V"><span class="l">V</span><span class="t">Verdadera</span><span class="m"></span></button><button class="ch vfb" data-a="F"><span class="l">F</span><span class="t">Falsa</span><span class="m"></span></button></div>
+   <div id="fb"></div></div>
+   <div class="actions" id="act"></div></article>
+  <div class="kbd">${sim?'Corrección al final · V / F / B (en blanco)':'V / F para responder'} · Intro para seguir</div>`;
+  $('b-back').onclick=()=>{if(rev){S=S.back;results(false,true)}else if(S.res.some(r=>r!==undefined))results(true);else home()};
+  $('b-star').onclick=e=>{const on=!ST.fav[q.id];if(on)ST.fav[q.id]=1;else delete ST.fav[q.id];save();e.currentTarget.classList.toggle('on',on);e.currentTarget.setAttribute('aria-pressed',on)};
+  const act=$('act');
+  if(rev){reviewShow(q);typeset(app);window.scrollTo(0,0);return}
+  app.querySelectorAll('.vfb').forEach(b=>b.onclick=()=>sim?simAnswer(q,b.dataset.a):grade(q,b.dataset.a));
+  if(sim){act.innerHTML=`<button class="btn ghost" id="b-blank">Dejar en blanco</button>`;$('b-blank').onclick=()=>simAnswer(q,null)}
+  else{act.innerHTML=`<button class="btn ghost" id="b-skip">Saltar</button>`;$('b-skip').onclick=next}
+  typeset(app);window.scrollTo(0,0);
+}
+function paint(q,a){
+  app.querySelectorAll('.vfb').forEach(c=>{c.disabled=true;const v=c.dataset.a,m=c.querySelector('.m');
+    if(v===q.a&&v===a){c.classList.add('ok');m.textContent='✓'}
+    else if(v===q.a){c.classList.add('ok');m.textContent='correcta'}
+    else if(v===a){c.classList.add('ko');m.textContent='✗'}
+    else c.classList.add('dim')});
+}
+function feedback(q,good){
+  let h='';
+  if(good==='blank')h+=`<div class="verdict mut">— En blanco · es ${q.a==='V'?'VERDADERA':'FALSA'}</div>`;
+  else h+=`<div class="verdict ${good?'ok':'ko'}">${good?'✓ Correcta':'✗ Incorrecta'} · es ${q.a==='V'?'VERDADERA':'FALSA'}</div>`;
+  h+=`<div class="exp"><div class="lbl">Por qué</div>${q.e}</div>`;
+  if(q.n)h+=`<div class="ojo"><b>Ojo · </b>${q.n}</div>`;
+  if(q.tw){const t=BYID[q.tw];h+=`<div class="twin"><div class="lbl">Su gemela (cambia lo subrayado)</div>
+    <div class="trow"><span class="tvf ${q.a==='V'?'v':'f'}">${q.a}</span><span>${q.qm}</span></div>
+    <div class="trow"><span class="tvf ${t.a==='V'?'v':'f'}">${t.a}</span><span>${q.twm}</span></div></div>`}
+  h+=`<div class="ref">Fuente · ${q.r}</div>`;
+  const fb=$('fb');fb.innerHTML=`<div class="reveal">${h}</div>`;typeset(fb);
+}
+function grade(q,a){
+  if(app.querySelector('.vfb').disabled)return;
+  const good=a===q.a;paint(q,a);S.res[S.i]=good?1:0;rec(q.id,good);
+  const sc=app.querySelector('.score');if(sc)sc.innerHTML=scoreHTML();
+  if(good&&ST.opt.fast){setTimeout(()=>{if(S&&S.list[S.i]===q)next()},650);return}
+  feedback(q,good);
+  $('act').innerHTML=`<button class="btn" id="b-next">${S.i+1<S.list.length?'Siguiente →':'Ver resultado'}</button>`;
+  const b=$('b-next');b.onclick=next;b.focus({preventScroll:true});
+}
+function simAnswer(q,a){
+  if(a===null){S.res[S.i]=-1;S.ans[S.i]=null}
+  else{const good=a===q.a;S.res[S.i]=good?1:0;S.ans[S.i]=a;rec(q.id,good);S.pts+=good?PTS_OK:-PTS_KO}
+  next();
+}
+function reviewShow(q){
+  const a=S.prev[S.i],r=S.prevRes[S.i];
+  paint(q,a);feedback(q,r===1?true:r===0?false:'blank');
+  $('act').innerHTML=`<button class="btn" id="b-next">${S.i+1<S.list.length?'Siguiente →':'Terminar la revisión'}</button>`;
+  $('b-next').onclick=next;
+}
+function next(){
+  if(S.i+1<S.list.length){S.i++;render()}
+  else if(S.mode==='review'){S=S.back;results(false,true)}
+  else results(false);
+}
+
+/* ===================== resultado ===================== */
+function plain(h){let t=h.replace(/<[^>]+>/g,'').replace(/\$[^$]*\$/g,'…').replace(/\s+/g,' ').trim();return esc(t.length>110?t.slice(0,108)+'…':t)}
+function byTema(pairs){
+  const T={};pairs.forEach(([r,q])=>{const o=T[q.tema]=T[q.tema]||{g:0,n:0};o.n++;if(r===1)o.g++});
+  const ks=Object.keys(TEMAS).filter(k=>T[k]);if(ks.length<2)return '';
+  return `<section class="sec"><h2>Por tema</h2><div class="tbs">${ks.map(k=>{const o=T[k],p=Math.round(100*o.g/o.n);return `<div class="tb"><b style="color:var(${TEMAS[k].v})">${TEMAS[k].n}</b><span class="bar"><i style="width:${p}%"></i></span><span class="mono">${o.g}/${o.n}</span></div>`}).join('')}</div></section>`;
+}
+function results(early){
+  const all=S.list.map((q,i)=>[S.res[i],q]);
+  const done=all.filter(x=>x[0]!==undefined);
+  const g=done.filter(x=>x[0]===1).length,b=done.filter(x=>x[0]===0).length,bl=S.list.length-g-b;
+  const fails=done.filter(x=>x[0]===0).map(x=>x[1]);
+  accent('--c1');
+  let head,list='';
+  if(S.mode==='sim'){
+    const nota=Math.min(10,Math.max(0,S.pts*10/S.list.length));
+    if(!early&&!S.saved){ST.sims.push({d:Date.now(),n:+nota.toFixed(2)});ST.sims=ST.sims.slice(-30);save();S.saved=true}
+    head=`<div class="eyebrow">Simulacro · nota del test${early?' · interrumpido':''}</div><div class="big" style="color:${nota>=5?'var(--ok)':nota>=3?'var(--warn)':'var(--ko)'}">${fmt(nota)}<small> / 10</small></div><p style="margin:0;color:var(--muted)">${g} aciertos · ${b} fallos · ${bl} en blanco → ${fmt(S.pts,1)} puntos de ${S.list.length}. ${nota>=5?'Aprobado.':nota>=3?'Llegas al mínimo de 3 para hacer media.':'Por debajo del mínimo de 3.'}</p>`;
+    list=`<section class="sec"><h2>Frase a frase</h2><div class="rlist">${all.map(([r,q])=>{const c=r===1?'ok':r===0?'':'bl',ic=r===1?'✓':r===0?'✗':'—';return `<div class="ritem ${c}"><span class="mono">${ic} ${q.id}</span><span>${plain(q.q)}</span></div>`}).join('')}</div></section>`;
+  }else{
+    head=`<div class="eyebrow">${esc(S.name)}${early?' · sesión interrumpida':''}</div><div class="big">${g}<small> / ${done.length}</small></div><p style="margin:0;color:var(--muted)">${done.length?Math.round(100*g/done.length):0} % de aciertos.</p>`;
+    if(fails.length)list=`<section class="sec"><h2>Para repasar</h2><div class="rlist">${fails.map(q=>`<div class="ritem"><span class="mono">${q.id}</span><span>${plain(q.q)}</span></div>`).join('')}</div></section>`;
+  }
+  app.innerHTML=`<div class="res"><header class="hero" style="padding-top:20px">${head}</header>${byTema(done)}${list}
+   <div class="actions" style="padding:0">${S.mode==='sim'?`<button class="btn" id="r-rev">Revisar con explicaciones</button>`:''}${fails.length?`<button class="btn ${S.mode==='sim'?'ghost':''}" id="r-f">Repetir las falladas</button>`:''}<button class="btn ghost" id="r-h">Volver al inicio</button></div></div>`;
+  if(S.mode==='sim'){const p=S;$('r-rev').onclick=()=>start(p.list,'Revisión del simulacro','review',{prev:p.ans.slice(),prevRes:p.res.slice(),back:p})}
+  if(fails.length)$('r-f').onclick=()=>start(fails,'Repetir falladas');
+  $('r-h').onclick=home;typeset(app);window.scrollTo(0,0);
+}
+
+/* ===================== teclado ===================== */
+document.addEventListener('keydown',e=>{
+  if(!S||e.metaKey||e.ctrlKey||e.altKey)return;
+  const k=e.key.toLowerCase();
+  if(k==='v'||k==='f'||k==='1'||k==='2'){const a=(k==='v'||k==='1')?'V':'F';const b=app.querySelector(`.vfb[data-a="${a}"]`);if(b&&!b.disabled){e.preventDefault();b.click()}}
+  if(k==='b'&&S.mode==='sim'){const b=$('b-blank');if(b){e.preventDefault();b.click()}}
+  if(e.key==='Enter'){const b=$('b-next');if(b&&!b.disabled){e.preventDefault();b.click()}}
+});
+home();
+
+</script>
+
+</body>
+</html>
